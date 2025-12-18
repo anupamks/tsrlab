@@ -13,8 +13,8 @@ const contactInfo = [
   {
     icon: 'icon-phone',
     title: 'Phone:',
-    text: '+ 1235 2355 98',
-    link: 'tel://1234567920',
+    text: '+971 58 591 2084',
+    link: 'tel:+971585912084',
   },
   {
     icon: 'icon-envelope-o',

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, FormEvent } from 'react';
 
 export default function Footer() {
@@ -26,9 +27,9 @@ export default function Footer() {
                 <span>203 Fake St. Mountain View, San Francisco, California, USA</span>
               </li>
               <li>
-                <a href="tel:+23923929210" className="flex items-center gap-3 hover:text-white transition-colors">
+                <a href="tel:+971585912084" className="flex items-center gap-3 hover:text-white transition-colors">
                   <span className="icon-phone text-primary"></span>
-                  <span>+2 392 3929 210</span>
+                  <span>+971 58 591 2084</span>
                 </a>
               </li>
               <li>
@@ -46,10 +47,16 @@ export default function Footer() {
             <div className="space-y-4">
               {[1, 2].map((id) => (
                 <div key={id} className="flex gap-4">
-                  <div 
-                    className="w-20 h-16 rounded-lg bg-cover bg-center flex-shrink-0"
-                    style={{ backgroundImage: `url('/images/image_${id}.jpg')` }}
-                  />
+                  <div className="relative w-20 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                    <Image
+                      src={`/images/image_${id}.jpg`}
+                      alt="Blog thumbnail"
+                      fill
+                      sizes="80px"
+                      className="object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                   <div>
                     <h4 className="text-sm font-medium text-white hover:text-primary transition-colors line-clamp-2">
                       <Link href={`/blog/${id}`}>

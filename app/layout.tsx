@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
-import TopBar from '@/components/TopBar';
-import Navbar from '@/components/Navbar';
+import dynamic from 'next/dynamic';
 import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 import AOSProvider from '@/components/AOSProvider';
@@ -11,6 +10,10 @@ import './globals.css';
 import '@/styles/flaticon.css';
 import '@/styles/ionicons.min.css';
 import '@/styles/icomoon.css';
+
+// Dynamic imports with no SSR to prevent hydration issues
+const TopBar = dynamic(() => import('@/components/TopBar'), { ssr: false });
+const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -32,13 +35,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={nunitoSans.variable}>
       <body className="font-nunito antialiased">
+        <Loader />
+        <TopBar />
+        <Navbar />
         <AOSProvider>
-          <Loader />
-          <TopBar />
-          <Navbar />
           <main>{children}</main>
-          <Footer />
         </AOSProvider>
+        <Footer />
       </body>
     </html>
   );

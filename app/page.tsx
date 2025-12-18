@@ -1,10 +1,31 @@
-import Counter from '@/components/Counter';
-import Services from '@/components/Services';
-import Projects from '@/components/Projects';
-import QuoteForm from '@/components/QuoteForm';
-import BlogList from '@/components/BlogList';
-import Testimonials from '@/components/Testimonials';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import Image from 'next/image';
+
+// Lazy load components below the fold
+const Counter = dynamic(() => import('@/components/Counter'), {
+  loading: () => <div className="py-16 bg-gray-100 animate-pulse" />,
+});
+
+const Services = dynamic(() => import('@/components/Services'), {
+  loading: () => <div className="py-16 animate-pulse" />,
+});
+
+const Projects = dynamic(() => import('@/components/Projects'), {
+  loading: () => <div className="py-16 animate-pulse" />,
+});
+
+const QuoteForm = dynamic(() => import('@/components/QuoteForm'), {
+  loading: () => <div className="py-16 bg-gray-100 animate-pulse" />,
+});
+
+const BlogList = dynamic(() => import('@/components/BlogList'), {
+  loading: () => <div className="py-16 animate-pulse" />,
+});
+
+const Testimonials = dynamic(() => import('@/components/Testimonials'), {
+  loading: () => <div className="py-16 bg-gray-50 animate-pulse" />,
+});
 
 const features = [
   { icon: 'flaticon-collaboration', title: 'Organization', active: true },
@@ -17,10 +38,14 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section 
-        className="relative min-h-[70vh] flex items-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/bg_1.jpg')" }}
-      >
+      <section className="relative min-h-[70vh] flex items-center">
+        <Image
+          src="/images/bg_1.jpg"
+          alt="Hero background"
+          fill
+          priority
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-primary/80"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl" data-aos="fade-up">
@@ -94,10 +119,16 @@ export default function Home() {
             {/* Success Story Card */}
             <div className="relative" data-aos="fade-left">
               <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-                <div 
-                  className="h-64 bg-cover bg-center"
-                  style={{ backgroundImage: "url('/images/about.jpg')" }}
-                />
+                <div className="relative h-64">
+                  <Image
+                    src="/images/about.jpg"
+                    alt="About us"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </div>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Read Our Success Story for Inspiration
@@ -129,10 +160,14 @@ export default function Home() {
       <Services />
 
       {/* CTA Section */}
-      <section 
-        className="relative py-16 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('/images/bg_1.jpg')" }}
-      >
+      <section className="relative py-16 bg-fixed">
+        <Image
+          src="/images/bg_1.jpg"
+          alt="CTA background"
+          fill
+          className="object-cover"
+          loading="lazy"
+        />
         <div className="absolute inset-0 bg-primary/90"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">

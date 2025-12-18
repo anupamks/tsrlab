@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -65,11 +66,17 @@ export default function Testimonials() {
               `}
             >
               <div className="flex items-start gap-4">
-                {/* Avatar */}
-                <div
-                  className="w-16 h-16 rounded-full bg-cover bg-center flex-shrink-0"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                />
+                {/* Avatar with Lazy Loading */}
+                <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </div>
                 
                 {/* Content */}
                 <div className="flex-1">

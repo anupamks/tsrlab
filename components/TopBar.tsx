@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 export default function TopBar() {
   return (
-    <div className="bg-white border-b border-gray-100">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between">
+    <div className="bg-white border-b border-gray-100" suppressHydrationWarning>
+      <div className="container mx-auto px-4" suppressHydrationWarning>
+        <div className="flex flex-col md:flex-row items-center justify-between" suppressHydrationWarning>
           {/* Logo */}
-          <div className="py-4">
-            <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-primary transition-colors">
+          <div className="py-4" suppressHydrationWarning>
+            <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-primary transition-colors" suppressHydrationWarning>
               Consolution
             </Link>
           </div>
@@ -34,7 +34,7 @@ export default function TopBar() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xs text-gray-500 uppercase tracking-wider">Call</span>
-                <span className="text-sm font-semibold text-gray-800">Call Us: + 1235 2355 98</span>
+                <span className="text-sm font-semibold text-gray-800">+971 58 591 2084</span>
               </div>
             </div>
             

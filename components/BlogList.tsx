@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const blogs = [
   {
@@ -104,12 +105,16 @@ export default function BlogList({ showHeading = true, limit, bgLight = false }:
               data-aos-delay={index * 100}
             >
               {/* Image with Date */}
-              <Link href={`/blog/${blog.id}`} className="block relative overflow-hidden rounded-t-xl">
-                <div 
-                  className="h-56 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundImage: `url('${blog.image}')` }}
+              <Link href={`/blog/${blog.id}`} className="block relative overflow-hidden rounded-t-xl h-56">
+                <Image
+                  src={blog.image}
+                  alt={blog.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
-                <div className="absolute bottom-0 left-0 bg-primary text-white text-center p-3 rounded-tr-xl">
+                <div className="absolute bottom-0 left-0 bg-primary text-white text-center p-3 rounded-tr-xl z-10">
                   <span className="block text-2xl font-bold">{blog.day}</span>
                   <span className="text-xs uppercase">{blog.month}</span>
                   <span className="block text-xs">{blog.year}</span>
