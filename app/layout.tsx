@@ -1,21 +1,22 @@
 import type { Metadata } from 'next';
+import { Nunito_Sans } from 'next/font/google';
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 import AOSProvider from '@/components/AOSProvider';
-
-import '@/styles/style.css';
-import '@/styles/animate.css';
-import '@/styles/aos.css';
-import '@/styles/ionicons.min.css';
-import '@/styles/flaticon.css';
-import '@/styles/icomoon.css';
-import '@/styles/open-iconic-bootstrap.min.css';
-import '@/styles/magnific-popup.css';
-import '@/styles/owl.carousel.min.css';
-import '@/styles/owl.theme.default.min.css';
 import './globals.css';
+
+// Keep icon fonts
+import '@/styles/flaticon.css';
+import '@/styles/ionicons.min.css';
+import '@/styles/icomoon.css';
+
+const nunitoSans = Nunito_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '700', '800', '900'],
+  variable: '--font-nunito',
+});
 
 export const metadata: Metadata = {
   title: 'Consolution - Business Consulting',
@@ -29,23 +30,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+    <html lang="en" className={nunitoSans.variable}>
+      <body className="font-nunito antialiased">
         <AOSProvider>
           <Loader />
           <TopBar />
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
         </AOSProvider>
       </body>
     </html>
   );
 }
-

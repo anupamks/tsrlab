@@ -39,35 +39,42 @@ interface ServicesProps {
 
 export default function Services({ showHeading = true }: ServicesProps) {
   return (
-    <section className="ftco-section">
-      <div className="container">
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="container mx-auto px-4">
         {showHeading && (
-          <div className="row justify-content-center mb-5 pb-2">
-            <div className="col-md-8 text-center heading-section ftco-animate">
-              <h2 className="mb-4">Our Best Services</h2>
-              <p>
-                Separated they live in. A small river named Duden flows by their place and
-                supplies it with the necessary regelialia. It is a paradisematic country
-              </p>
-            </div>
+          <div className="max-w-2xl mx-auto text-center mb-12" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Best Services
+            </h2>
+            <p className="text-gray-600">
+              Separated they live in. A small river named Duden flows by their place and
+              supplies it with the necessary regelialia. It is a paradisematic country
+            </p>
           </div>
         )}
-        <div className="row no-gutters">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
           {services.map((service, index) => (
-            <div key={index} className="col-lg-4 d-flex">
-              <div
-                className={`services-2 text-center ftco-animate ${
-                  index % 3 === 0 ? 'noborder-left' : ''
-                } ${index >= 3 ? 'noborder-bottom' : ''}`}
-              >
-                <div className="icon mt-2 d-flex justify-content-center align-items-center">
-                  <span className={service.icon}></span>
-                </div>
-                <div className="text media-body">
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </div>
+            <div
+              key={index}
+              className={`
+                p-8 text-center bg-white border border-gray-100
+                hover:shadow-xl hover:-translate-y-1 transition-all duration-300
+                ${index % 3 !== 2 ? 'lg:border-r-0' : ''}
+                ${index < 3 ? 'border-b-0 lg:border-b' : ''}
+              `}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+                <span className={`${service.icon} text-primary text-4xl`}></span>
               </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                {service.title}
+              </h3>
+              <p className="text-gray-600">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
@@ -75,4 +82,3 @@ export default function Services({ showHeading = true }: ServicesProps) {
     </section>
   );
 }
-

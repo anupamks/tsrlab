@@ -20,13 +20,6 @@ const popularArticles = [
 
 const tags = ['School', 'Kids', 'Nursery', 'Daycare', 'Care', 'Kindergarten', 'Teacher'];
 
-const archives = [
-  { date: 'December 2018', count: 30 },
-  { date: 'November 2018', count: 20 },
-  { date: 'September 2018', count: 6 },
-  { date: 'August 2018', count: 8 },
-];
-
 export default function BlogSinglePage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [commentForm, setCommentForm] = useState({
@@ -58,251 +51,223 @@ export default function BlogSinglePage() {
         ]}
       />
 
-      <section className="ftco-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 ftco-animate">
-              <h2 className="mb-3">#2. Creative WordPress Themes</h2>
-              <p>
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Main Content */}
+            <div className="lg:col-span-2" data-aos="fade-up">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                #2. Creative WordPress Themes
+              </h2>
+              
+              <p className="text-gray-600 mb-4">
                 Temporibus ad error suscipit exercitationem hic molestiae totam obcaecati
                 rerum, eius aut, in. Exercitationem atque quidem tempora maiores ex
-                architecto voluptatum aut officia doloremque. Error dolore voluptas, omnis
-                molestias odio dignissimos culpa ex earum nisi consequatur quos odit quasi
-                repellat qui officiis reiciendis incidunt hic non? Debitis commodi aut,
-                adipisci.
+                architecto voluptatum aut officia doloremque.
               </p>
-              <p>
-                <img src="/images/image_2.jpg" alt="" className="img-fluid" />
-              </p>
-              <p>
+              
+              <img 
+                src="/images/image_2.jpg" 
+                alt="Blog post" 
+                className="w-full rounded-xl mb-6"
+              />
+              
+              <p className="text-gray-600 mb-4">
                 Quisquam esse aliquam fuga distinctio, quidem delectus veritatis
                 reiciendis. Nihil explicabo quod, est eos ipsum. Unde aut non tenetur
                 tempore, nisi culpa voluptate maiores officiis quis vel ab consectetur
-                suscipit veritatis nulla quos quia aspernatur perferendis, libero sint.
-                Error, velit, porro. Deserunt minus, quibusdam iste enim veniam, modi rem
-                maiores.
+                suscipit veritatis nulla quos quia aspernatur perferendis.
               </p>
-              <p>
+              
+              <p className="text-gray-600 mb-4">
                 Odit voluptatibus, eveniet vel nihil cum ullam dolores laborum, quo velit
                 commodi rerum eum quidem pariatur! Quia fuga iste tenetur, ipsa vel nisi
-                in dolorum consequatur, veritatis porro explicabo soluta commodi libero
-                voluptatem similique id quidem? Blanditiis voluptates aperiam non magni.
-                Reprehenderit nobis odit inventore, quia laboriosam harum excepturi ea.
-              </p>
-              <p>
-                Adipisci vero culpa, eius nobis soluta. Dolore, maxime ullam ipsam quidem,
-                dolor distinctio similique asperiores voluptas enim, exercitationem
-                ratione aut adipisci modi quod quibusdam iusto, voluptates beatae iure
-                nemo itaque laborum. Consequuntur et pariatur totam fuga eligendi vero
-                dolorum provident. Voluptatibus, veritatis. Beatae numquam nam ab
-                voluptatibus culpa, tenetur recusandae!
-              </p>
-              <p>
-                Voluptas dolores dignissimos dolorum temporibus, autem aliquam ducimus at
-                officia adipisci quasi nemo a perspiciatis provident magni laboriosam
-                repudiandae iure iusto commodi debitis est blanditiis alias laborum sint
-                dolore. Dolores, iure, reprehenderit. Error provident, pariatur cupiditate
-                soluta doloremque aut ratione. Harum voluptates mollitia illo minus
-                praesentium, rerum ipsa debitis, inventore?
+                in dolorum consequatur, veritatis porro explicabo soluta commodi.
               </p>
 
-              <div className="tag-widget post-tag-container mb-5 mt-5">
-                <div className="tagcloud">
-                  <a href="#" className="tag-cloud-link">Life</a>
-                  <a href="#" className="tag-cloud-link">Sport</a>
-                  <a href="#" className="tag-cloud-link">Tech</a>
-                  <a href="#" className="tag-cloud-link">Travel</a>
-                </div>
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-8 pt-6 border-t">
+                {['Life', 'Sport', 'Tech', 'Travel'].map((tag) => (
+                  <a 
+                    key={tag}
+                    href="#" 
+                    className="px-4 py-2 bg-gray-100 rounded-full text-sm text-gray-600 hover:bg-primary hover:text-white transition-colors"
+                  >
+                    {tag}
+                  </a>
+                ))}
               </div>
 
-              <div className="about-author d-flex p-4 bg-light">
-                <div className="bio mr-5">
-                  <img src="/images/person_1.jpg" alt="Image placeholder" className="img-fluid mb-4" />
-                </div>
-                <div className="desc">
-                  <h3>George Washington</h3>
-                  <p>
+              {/* Author */}
+              <div className="flex gap-6 p-6 bg-gray-50 rounded-xl mb-8">
+                <img 
+                  src="/images/person_1.jpg" 
+                  alt="Author" 
+                  className="w-20 h-20 rounded-full object-cover"
+                />
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">George Washington</h3>
+                  <p className="text-gray-600 text-sm">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-                    itaque, autem necessitatibus voluptate quod mollitia delectus aut,
-                    sunt placeat nam vero culpa sapiente consectetur similique, inventore
-                    eos fugit cupiditate numquam!
+                    itaque, autem necessitatibus voluptate quod mollitia delectus aut.
                   </p>
                 </div>
               </div>
 
-              <div className="pt-5 mt-5">
-                <h3 className="mb-5 h4 font-weight-bold">6 Comments</h3>
-                <ul className="comment-list">
-                  <li className="comment">
-                    <div className="vcard bio">
-                      <img src="/images/person_1.jpg" alt="Image placeholder" />
-                    </div>
-                    <div className="comment-body">
-                      <h3>John Doe</h3>
-                      <div className="meta mb-2">June 27, 2019 at 2:21pm</div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Pariatur quidem laborum necessitatibus, ipsam impedit vitae
-                        autem, eum officia, fugiat saepe enim sapiente iste iure! Quam
-                        voluptas earum impedit necessitatibus, nihil?
-                      </p>
-                      <p>
-                        <a href="#" className="reply">Reply</a>
-                      </p>
-                    </div>
-                  </li>
-                  <li className="comment">
-                    <div className="vcard bio">
-                      <img src="/images/person_1.jpg" alt="Image placeholder" />
-                    </div>
-                    <div className="comment-body">
-                      <h3>John Doe</h3>
-                      <div className="meta mb-2">June 27, 2019 at 2:21pm</div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Pariatur quidem laborum necessitatibus, ipsam impedit vitae
-                        autem, eum officia, fugiat saepe enim sapiente iste iure! Quam
-                        voluptas earum impedit necessitatibus, nihil?
-                      </p>
-                      <p>
-                        <a href="#" className="reply">Reply</a>
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-
-                <div className="comment-form-wrap pt-5">
-                  <h3 className="mb-5 h4 font-weight-bold">Leave a comment</h3>
-                  <form onSubmit={handleCommentSubmit} className="p-5 bg-light">
-                    <div className="form-group">
-                      <label htmlFor="name">Name *</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="name"
-                        value={commentForm.name}
-                        onChange={(e) => setCommentForm({ ...commentForm, name: e.target.value })}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="email">Email *</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        value={commentForm.email}
-                        onChange={(e) => setCommentForm({ ...commentForm, email: e.target.value })}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="website">Website</label>
-                      <input
-                        type="url"
-                        className="form-control"
-                        id="website"
-                        value={commentForm.website}
-                        onChange={(e) => setCommentForm({ ...commentForm, website: e.target.value })}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="message">Message</label>
-                      <textarea
-                        id="message"
-                        cols={30}
-                        rows={10}
-                        className="form-control"
-                        value={commentForm.message}
-                        onChange={(e) => setCommentForm({ ...commentForm, message: e.target.value })}
-                        required
-                      ></textarea>
-                    </div>
-                    <div className="form-group">
-                      <input type="submit" value="Post Comment" className="btn py-3 px-4 btn-primary" />
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-4 sidebar ftco-animate">
-              <div className="sidebar-box">
-                <form onSubmit={handleSearch} className="search-form">
-                  <div className="form-group">
-                    <span className="icon icon-search"></span>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Type a keyword and hit enter"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
+              {/* Comments */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">6 Comments</h3>
+                
+                {[1, 2].map((_, i) => (
+                  <div key={i} className="flex gap-4 mb-6 pb-6 border-b">
+                    <img 
+                      src="/images/person_1.jpg" 
+                      alt="Commenter" 
+                      className="w-12 h-12 rounded-full object-cover"
                     />
-                  </div>
-                </form>
-              </div>
-
-              <div className="sidebar-box ftco-animate">
-                <h3>Category</h3>
-                <ul className="categories">
-                  {categories.map((category, index) => (
-                    <li key={index}>
-                      <a href="#">{category.name} <span>({category.count})</span></a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="sidebar-box ftco-animate">
-                <h3>Popular Articles</h3>
-                {popularArticles.map((article) => (
-                  <div key={article.id} className="block-21 mb-4 d-flex">
-                    <div
-                      className="blog-img mr-4"
-                      style={{ backgroundImage: `url(${article.image})` }}
-                    ></div>
-                    <div className="text">
-                      <h3 className="heading">
-                        <Link href={`/blog/${article.id}`}>{article.title}</Link>
-                      </h3>
-                      <div className="meta">
-                        <div><span className="icon-calendar"></span> {article.date}</div>
-                        <div><span className="icon-person"></span> {article.author}</div>
-                        <div><span className="icon-chat"></span> {article.comments}</div>
-                      </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">John Doe</h4>
+                      <span className="text-sm text-gray-500">June 27, 2019 at 2:21pm</span>
+                      <p className="text-gray-600 mt-2">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Pariatur quidem laborum necessitatibus, ipsam impedit vitae.
+                      </p>
+                      <button className="text-primary text-sm font-semibold mt-2 hover:underline">
+                        Reply
+                      </button>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="sidebar-box ftco-animate">
-                <h3>Tag Cloud</h3>
-                <ul className="tagcloud m-0 p-0">
-                  {tags.map((tag, index) => (
-                    <a key={index} href="#" className="tag-cloud-link">{tag}</a>
-                  ))}
-                </ul>
+              {/* Comment Form */}
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Leave a comment</h3>
+                <form onSubmit={handleCommentSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                      <input
+                        type="text"
+                        value={commentForm.name}
+                        onChange={(e) => setCommentForm({ ...commentForm, name: e.target.value })}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                      <input
+                        type="email"
+                        value={commentForm.email}
+                        onChange={(e) => setCommentForm({ ...commentForm, email: e.target.value })}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Website</label>
+                    <input
+                      type="url"
+                      value={commentForm.website}
+                      onChange={(e) => setCommentForm({ ...commentForm, website: e.target.value })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+                    <textarea
+                      rows={5}
+                      value={commentForm.message}
+                      onChange={(e) => setCommentForm({ ...commentForm, message: e.target.value })}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  >
+                    Post Comment
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1" data-aos="fade-left">
+              {/* Search */}
+              <div className="bg-gray-50 rounded-xl p-6 mb-6">
+                <form onSubmit={handleSearch} className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                  />
+                  <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+                    <span className="icon-search"></span>
+                  </button>
+                </form>
               </div>
 
-              <div className="sidebar-box ftco-animate">
-                <h3>Archives</h3>
-                <ul className="categories">
-                  {archives.map((archive, index) => (
+              {/* Categories */}
+              <div className="bg-gray-50 rounded-xl p-6 mb-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Category</h3>
+                <ul className="space-y-2">
+                  {categories.map((category, index) => (
                     <li key={index}>
-                      <a href="#">{archive.date} <span>({archive.count})</span></a>
+                      <a 
+                        href="#" 
+                        className="flex justify-between py-2 text-gray-600 hover:text-primary transition-colors"
+                      >
+                        {category.name}
+                        <span className="text-gray-400">({category.count})</span>
+                      </a>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="sidebar-box ftco-animate">
-                <h3>Paragraph</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-                  itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt
-                  placeat nam vero culpa sapiente consectetur similique, inventore eos
-                  fugit cupiditate numquam!
-                </p>
+              {/* Popular Articles */}
+              <div className="bg-gray-50 rounded-xl p-6 mb-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Popular Articles</h3>
+                <div className="space-y-4">
+                  {popularArticles.map((article) => (
+                    <div key={article.id} className="flex gap-4">
+                      <div
+                        className="w-20 h-16 rounded-lg bg-cover bg-center flex-shrink-0"
+                        style={{ backgroundImage: `url(${article.image})` }}
+                      />
+                      <div>
+                        <h4 className="text-sm font-medium text-gray-900 hover:text-primary transition-colors line-clamp-2">
+                          <Link href={`/blog/${article.id}`}>{article.title}</Link>
+                        </h4>
+                        <div className="flex gap-2 text-xs text-gray-500 mt-1">
+                          <span>{article.date}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tags */}
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Tag Cloud</h3>
+                <div className="flex flex-wrap gap-2">
+                  {tags.map((tag, index) => (
+                    <a 
+                      key={index}
+                      href="#" 
+                      className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-colors"
+                    >
+                      {tag}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -311,4 +276,3 @@ export default function BlogSinglePage() {
     </>
   );
 }
-

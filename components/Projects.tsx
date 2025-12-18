@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const projects = [
   { id: 1, image: '/images/project-1.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
@@ -23,39 +24,52 @@ export default function Projects({ showHeading = true, limit, fullWidth = false 
   const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section className="ftco-section ftco-no-pb">
-      <div className={fullWidth ? 'container-fluid px-0' : 'container'}>
+    <section className="py-16 md:py-24">
+      <div className={fullWidth ? 'w-full' : 'container mx-auto px-4'}>
         {showHeading && (
-          <div className="row no-gutters justify-content-center mb-5">
-            <div className="col-md-7 text-center heading-section ftco-animate">
-              <h2 className="mb-4">Our Recent Projects</h2>
-              <p>
-                Separated they live in. A small river named Duden flows by their place and
-                supplies it with the necessary regelialia. It is a paradisematic country
-              </p>
-            </div>
+          <div className="max-w-2xl mx-auto text-center mb-12 px-4" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Recent Projects
+            </h2>
+            <p className="text-gray-600">
+              Separated they live in. A small river named Duden flows by their place and
+              supplies it with the necessary regelialia. It is a paradisematic country
+            </p>
           </div>
         )}
-        <div className="row no-gutters">
-          {displayedProjects.map((project) => (
-            <div key={project.id} className={fullWidth ? 'col-md-3' : 'col-md-4'}>
-              <div
-                className="project mb-4 img ftco-animate d-flex justify-content-center align-items-center"
+        
+        <div className={`grid grid-cols-1 sm:grid-cols-2 ${fullWidth ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-4`}>
+          {displayedProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className="group relative aspect-square overflow-hidden rounded-lg"
+              data-aos="fade-up"
+              data-aos-delay={index * 50}
+            >
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                 style={{ backgroundImage: `url(${project.image})` }}
-              >
-                <div className="overlay"></div>
+              />
+              
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/80 transition-all duration-300" />
+              
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 p-4">
                 <Link
                   href={`/projects/${project.id}`}
-                  className="btn-site d-flex align-items-center justify-content-center"
+                  className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 
+                             hover:bg-primary hover:text-white transition-colors"
                 >
-                  <span className="icon-subdirectory_arrow_right"></span>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
                 </Link>
-                <div className="text text-center p-4">
-                  <h3>
-                    <Link href={`/projects/${project.id}`}>{project.title}</Link>
-                  </h3>
-                  <span>{project.category}</span>
-                </div>
+                <h3 className="text-lg font-bold text-white text-center mb-1">
+                  <Link href={`/projects/${project.id}`}>{project.title}</Link>
+                </h3>
+                <span className="text-white/70 text-sm">{project.category}</span>
               </div>
             </div>
           ))}
@@ -64,4 +78,3 @@ export default function Projects({ showHeading = true, limit, fullWidth = false 
     </section>
   );
 }
-

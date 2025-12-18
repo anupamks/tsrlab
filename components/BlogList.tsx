@@ -81,53 +81,63 @@ export default function BlogList({ showHeading = true, limit, bgLight = false }:
   const displayedBlogs = limit ? blogs.slice(0, limit) : blogs;
 
   return (
-    <section className={`ftco-section ${bgLight ? 'bg-light' : ''}`}>
-      <div className="container">
+    <section className={`py-16 md:py-24 ${bgLight ? 'bg-gray-50' : ''}`}>
+      <div className="container mx-auto px-4">
         {showHeading && (
-          <div className="row justify-content-center mb-5 pb-2">
-            <div className="col-md-8 text-center heading-section ftco-animate">
-              <h2 className="mb-4">
-                <span>Recent</span> Blog
-              </h2>
-              <p>
-                Separated they live in. A small river named Duden flows by their place and
-                supplies it with the necessary regelialia. It is a paradisematic country
-              </p>
-            </div>
+          <div className="max-w-2xl mx-auto text-center mb-12" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <span className="text-primary">Recent</span> Blog
+            </h2>
+            <p className="text-gray-600">
+              Separated they live in. A small river named Duden flows by their place and
+              supplies it with the necessary regelialia. It is a paradisematic country
+            </p>
           </div>
         )}
-        <div className="row">
-          {displayedBlogs.map((blog) => (
-            <div key={blog.id} className="col-md-6 col-lg-4 ftco-animate">
-              <div className="blog-entry">
-                <Link
-                  href={`/blog/${blog.id}`}
-                  className="block-20 d-flex align-items-end"
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {displayedBlogs.map((blog, index) => (
+            <div 
+              key={blog.id} 
+              className="group"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              {/* Image with Date */}
+              <Link href={`/blog/${blog.id}`} className="block relative overflow-hidden rounded-t-xl">
+                <div 
+                  className="h-56 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                   style={{ backgroundImage: `url('${blog.image}')` }}
-                >
-                  <div className="meta-date text-center p-2">
-                    <span className="day">{blog.day}</span>
-                    <span className="mos">{blog.month}</span>
-                    <span className="yr">{blog.year}</span>
-                  </div>
-                </Link>
-                <div className="text bg-white p-4">
-                  <h3 className="heading">
-                    <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
-                  </h3>
-                  <p>{blog.excerpt}</p>
-                  <div className="d-flex align-items-center mt-4">
-                    <p className="mb-0">
-                      <Link href={`/blog/${blog.id}`} className="btn btn-primary">
-                        Read More <span className="ion-ios-arrow-round-forward"></span>
-                      </Link>
-                    </p>
-                    <p className="ml-auto mb-0">
-                      <span className="mr-2">{blog.author}</span>
-                      <span className="meta-chat">
-                        <span className="icon-chat"></span> {blog.comments}
-                      </span>
-                    </p>
+                />
+                <div className="absolute bottom-0 left-0 bg-primary text-white text-center p-3 rounded-tr-xl">
+                  <span className="block text-2xl font-bold">{blog.day}</span>
+                  <span className="text-xs uppercase">{blog.month}</span>
+                  <span className="block text-xs">{blog.year}</span>
+                </div>
+              </Link>
+              
+              {/* Content */}
+              <div className="bg-white p-6 rounded-b-xl shadow-lg">
+                <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                  <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  {blog.excerpt}
+                </p>
+                <div className="flex items-center justify-between">
+                  <Link 
+                    href={`/blog/${blog.id}`}
+                    className="text-primary font-semibold text-sm hover:underline flex items-center gap-1"
+                  >
+                    Read More
+                    <span className="ion-ios-arrow-round-forward text-lg"></span>
+                  </Link>
+                  <div className="flex items-center gap-3 text-gray-500 text-sm">
+                    <span>{blog.author}</span>
+                    <span className="flex items-center gap-1">
+                      <span className="icon-chat"></span>
+                      {blog.comments}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -138,4 +148,3 @@ export default function BlogList({ showHeading = true, limit, bgLight = false }:
     </section>
   );
 }
-

@@ -40,80 +40,70 @@ export default function Testimonials() {
     return () => clearInterval(interval);
   }, []);
 
-  const getVisibleTestimonials = () => {
-    const items = [];
-    for (let i = 0; i < 3; i++) {
-      const index = (currentIndex + i) % testimonials.length;
-      items.push({ ...testimonials[index], isCenter: i === 1 });
-    }
-    return items;
-  };
-
   return (
-    <section className="ftco-section testimony-section">
-      <div className="container">
-        <div className="row justify-content-center mb-5">
-          <div className="col-md-8 text-center heading-section ftco-animate">
-            <h2 className="mb-4">Our Clients Says</h2>
-            <p>
-              Separated they live in. A small river named Duden flows by their place and supplies
-              it with the necessary regelialia. It is a paradisematic country
-            </p>
-          </div>
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="container mx-auto px-4">
+        {/* Heading */}
+        <div className="max-w-2xl mx-auto text-center mb-12" data-aos="fade-up">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Clients Says
+          </h2>
+          <p className="text-gray-600">
+            Separated they live in. A small river named Duden flows by their place and supplies
+            it with the necessary regelialia. It is a paradisematic country
+          </p>
         </div>
-        <div className="row ftco-animate justify-content-center">
-          <div className="col-md-12">
-            <div className="testimonial-carousel">
-              {getVisibleTestimonials().map((item, index) => (
-                <div key={index} className={`item ${item.isCenter ? 'center' : ''}`}>
-                  <div className="testimony-wrap d-flex">
-                    <div
-                      className="user-img"
-                      style={{ backgroundImage: `url(${item.image})` }}
-                    ></div>
-                    <div className="text pl-4">
-                      <span className="quote d-flex align-items-center justify-content-center">
-                        <i className="icon-quote-left"></i>
-                      </span>
-                      <p>{item.text}</p>
-                      <p className="name">{item.name}</p>
-                      <span className="position">{item.position}</span>
-                    </div>
+
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up">
+          {testimonials.slice(0, 3).map((item, index) => (
+            <div
+              key={index}
+              className={`
+                bg-white rounded-xl p-6 shadow-lg transition-all duration-300
+                ${index === 1 ? 'md:scale-105 md:shadow-xl' : 'md:opacity-80'}
+              `}
+            >
+              <div className="flex items-start gap-4">
+                {/* Avatar */}
+                <div
+                  className="w-16 h-16 rounded-full bg-cover bg-center flex-shrink-0"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                />
+                
+                {/* Content */}
+                <div className="flex-1">
+                  {/* Quote Icon */}
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                    <span className="icon-quote-left text-primary text-sm"></span>
                   </div>
+                  
+                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                    {item.text}
+                  </p>
+                  
+                  <p className="font-bold text-gray-900">{item.name}</p>
+                  <span className="text-primary text-sm">{item.position}</span>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* Dots Indicator */}
+        <div className="flex justify-center gap-2 mt-8">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`
+                w-3 h-3 rounded-full transition-all duration-300
+                ${index === currentIndex ? 'bg-primary w-8' : 'bg-gray-300 hover:bg-gray-400'}
+              `}
+            />
+          ))}
         </div>
       </div>
-      <style jsx>{`
-        .testimonial-carousel {
-          display: flex;
-          gap: 30px;
-          justify-content: center;
-          overflow: hidden;
-        }
-        .item {
-          flex: 0 0 calc(33.333% - 20px);
-          opacity: 0.7;
-          transform: scale(0.9);
-          transition: all 0.3s ease;
-        }
-        .item.center {
-          opacity: 1;
-          transform: scale(1);
-        }
-        @media (max-width: 991px) {
-          .item {
-            flex: 0 0 100%;
-            display: none;
-          }
-          .item.center {
-            display: block;
-          }
-        }
-      `}</style>
     </section>
   );
 }
-

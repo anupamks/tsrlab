@@ -5,8 +5,15 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Our Services - Consolution',
-  description: 'Explore our comprehensive business consulting services - Business Analysis, Consulting, Insurance, and more.',
+  description: 'Explore our range of business consulting services to help your business grow.',
 };
+
+const features = [
+  { icon: 'flaticon-collaboration', title: 'Organization' },
+  { icon: 'flaticon-analysis', title: 'Risk Analysis' },
+  { icon: 'flaticon-search-engine', title: 'Marketing Strategy' },
+  { icon: 'flaticon-handshake', title: 'Capital Market' },
+];
 
 export default function ServicesPage() {
   return (
@@ -20,96 +27,63 @@ export default function ServicesPage() {
       />
 
       {/* Features Section */}
-      <section className="ftco-section ftco-no-pb">
-        <div className="container">
-          <div className="row d-flex">
-            <div className="col-md-5 order-md-last wrap-about align-items-stretch">
-              <div className="wrap-about-border ftco-animate">
-                <div
-                  className="img"
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Success Story Card */}
+            <div className="relative order-2 lg:order-1" data-aos="fade-right">
+              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+                <div 
+                  className="h-64 bg-cover bg-center"
                   style={{ backgroundImage: "url('/images/about.jpg')" }}
-                ></div>
-                <div className="text">
-                  <h3>Read Our Success Story for Inspiration</h3>
-                  <p>
+                />
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    Read Our Success Story for Inspiration
+                  </h3>
+                  <p className="text-gray-600 mb-4">
                     Far far away, behind the word mountains, far from the countries
-                    Vokalia and Consonantia, there live the blind texts. Separated they
-                    live in Bookmarksgrove right at the coast of the Semantics, a large
-                    language ocean.
+                    Vokalia and Consonantia, there live the blind texts.
                   </p>
-                  <p>
-                    On her way she met a copy. The copy warned the Little Blind Text, that
-                    where it came from it would have been rewritten a thousand times and
-                    everything that was left from its origin would be the word.
+                  <p className="text-gray-600 mb-6">
+                    On her way she met a copy. The copy warned the Little Blind Text.
                   </p>
-                  <p>
-                    <Link href="/contact" className="btn btn-primary py-3 px-4">
-                      Contact us
-                    </Link>
-                  </p>
+                  <Link 
+                    href="/contact"
+                    className="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+                  >
+                    Contact us
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="col-md-7 wrap-about pr-md-4 ftco-animate">
-              <h2 className="mb-4">Our Main Features</h2>
-              <p>
+
+            {/* Features */}
+            <div className="order-1 lg:order-2" data-aos="fade-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Our Main Features
+              </h2>
+              <p className="text-gray-600 mb-8">
                 On her way she met a copy. The copy warned the Little Blind Text, that
-                where it came from it would have been rewritten a thousand times and
-                everything that was left from its origin would be the word.
+                where it came from it would have been rewritten a thousand times.
               </p>
-              <div className="row mt-5">
-                <div className="col-lg-6">
-                  <div className="services active text-center">
-                    <div className="icon mt-2 d-flex justify-content-center align-items-center">
-                      <span className="flaticon-collaboration"></span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {features.map((feature, index) => (
+                  <div 
+                    key={index}
+                    className="p-6 rounded-xl bg-white border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                      <span className={`${feature.icon} text-2xl text-primary`}></span>
                     </div>
-                    <div className="text media-body">
-                      <h3>Organization</h3>
-                      <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia.
-                      </p>
-                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Far far away, behind the word mountains, far from the countries Vokalia.
+                    </p>
                   </div>
-                  <div className="services text-center">
-                    <div className="icon mt-2 d-flex justify-content-center align-items-center">
-                      <span className="flaticon-analysis"></span>
-                    </div>
-                    <div className="text media-body">
-                      <h3>Risk Analysis</h3>
-                      <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="services text-center">
-                    <div className="icon mt-2 d-flex justify-content-center align-items-center">
-                      <span className="flaticon-search-engine"></span>
-                    </div>
-                    <div className="text media-body">
-                      <h3>Marketing Strategy</h3>
-                      <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="services text-center">
-                    <div className="icon mt-2 d-flex justify-content-center align-items-center">
-                      <span className="flaticon-handshake"></span>
-                    </div>
-                    <div className="text media-body">
-                      <h3>Capital Market</h3>
-                      <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -121,4 +95,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

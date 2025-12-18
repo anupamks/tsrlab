@@ -21,107 +21,100 @@ export default function AboutPage() {
       />
 
       {/* About Content */}
-      <section className="ftco-section">
-        <div className="container">
-          <div className="row d-flex">
-            <div className="col-md-5 order-md-last wrap-about align-items-stretch">
-              <div className="wrap-about-border">
-                <div
-                  className="img"
-                  style={{ backgroundImage: "url('/images/about.jpg')" }}
-                ></div>
-                <div className="text">
-                  <h3>Read Our Success Story for Inspiration</h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the countries
-                    Vokalia and Consonantia, there live the blind texts. Separated they
-                    live in Bookmarksgrove right at the coast of the Semantics, a large
-                    language ocean.
-                  </p>
-                  <p>
-                    <Link href="/contact" className="btn btn-primary py-3 px-4">
-                      Contact us
-                    </Link>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-7 wrap-about pr-md-4 ftco-animate">
-              <h2 className="mb-4">Welcome to Consolution</h2>
-              <p>
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Text Content */}
+            <div data-aos="fade-right">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Welcome to Consolution
+              </h2>
+              <p className="text-gray-600 mb-4">
                 On her way she met a copy. The copy warned the Little Blind Text, that
                 where it came from it would have been rewritten a thousand times and
                 everything that was left from its origin would be the word.
               </p>
-              <p>
+              <p className="text-gray-600 mb-4">
                 A small river named Duden flows by their place and supplies it with the
                 necessary regelialia. It is a paradisematic country, in which roasted
                 parts of sentences fly into your mouth.
               </p>
-              <p>
+              <p className="text-gray-600">
                 On her way she met a copy. The copy warned the Little Blind Text, that
                 where it came from it would have been rewritten a thousand times and
                 everything that was left from its origin would be the word &quot;and&quot; and the
                 Little Blind Text should turn around and return to its own, safe country.
-                But nothing the copy said could convince her and so it didn&apos;t take long
-                until a few insidious Copy Writers ambushed her, made her drunk with
-                Longe and Parole and dragged her into their agency, where they abused her
-                for their
               </p>
+            </div>
+
+            {/* Success Story Card */}
+            <div className="relative" data-aos="fade-left">
+              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+                <div 
+                  className="h-64 bg-cover bg-center"
+                  style={{ backgroundImage: "url('/images/about.jpg')" }}
+                />
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    Read Our Success Story for Inspiration
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Far far away, behind the word mountains, far from the countries
+                    Vokalia and Consonantia, there live the blind texts. Separated they
+                    live in Bookmarksgrove right at the coast of the Semantics.
+                  </p>
+                  <Link 
+                    href="/contact"
+                    className="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+                  >
+                    Contact us
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Video Section */}
-      <section className="ftco-section ftco-counter">
-        <div className="container">
-          <div className="row justify-content-center mb-5 pb-2 d-flex">
-            <div className="col-md-6 align-items-stretch d-flex">
-              <div
-                className="img img-video d-flex align-items-center"
-                style={{ backgroundImage: "url('/images/about.jpg')" }}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Video */}
+            <div 
+              className="relative h-80 md:h-96 rounded-2xl overflow-hidden bg-cover bg-center group"
+              style={{ backgroundImage: "url('/images/about.jpg')" }}
+              data-aos="fade-right"
+            >
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+              <a
+                href="https://vimeo.com/45830194"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 flex items-center justify-center"
               >
-                <div className="video justify-content-center">
-                  <a
-                    href="https://vimeo.com/45830194"
-                    className="icon-video popup-vimeo d-flex justify-content-center align-items-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="ion-ios-play"></span>
-                  </a>
+                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                  <span className="ion-ios-play text-primary text-3xl ml-1"></span>
                 </div>
-              </div>
+              </a>
             </div>
-            <div className="col-md-6 heading-section ftco-animate pl-lg-5 pt-md-0 pt-5">
-              <h2 className="mb-4">We Are the Best Consulting Agency</h2>
-              <p>
+
+            {/* Content */}
+            <div data-aos="fade-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                We Are the Best Consulting Agency
+              </h2>
+              <p className="text-gray-600 mb-4">
                 Separated they live in. A small river named Duden flows by their place
                 and supplies it with the necessary regelialia. It is a paradisematic
                 country. A small river named Duden flows by their place and supplies it
-                with the necessary regelialia. It is a paradisematic country, in which
-                roasted parts of sentences fly into your mouth.
+                with the necessary regelialia.
               </p>
-              <p>
+              <p className="text-gray-600">
                 A small river named Duden flows by their place and supplies it with the
                 necessary regelialia. It is a paradisematic country, in which roasted
                 parts of sentences fly into your mouth.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Intro Section */}
-      <section
-        className="ftco-intro ftco-no-pb img"
-        style={{ backgroundImage: "url('/images/bg_3.jpg')" }}
-      >
-        <div className="container">
-          <div className="row justify-content-center mb-5">
-            <div className="col-md-10 text-center heading-section heading-section-white ftco-animate">
-              <h2 className="mb-0">You Always Get the Best Guidance</h2>
             </div>
           </div>
         </div>
@@ -135,4 +128,3 @@ export default function AboutPage() {
     </>
   );
 }
-

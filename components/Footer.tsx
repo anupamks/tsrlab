@@ -14,153 +14,149 @@ export default function Footer() {
   };
 
   return (
-    <footer className="ftco-footer ftco-bg-dark ftco-section">
-      <div className="container">
-        <div className="row mb-5">
-          <div className="col-md-6 col-lg-3">
-            <div className="ftco-footer-widget mb-5">
-              <h2 className="ftco-heading-2">Have a Questions?</h2>
-              <div className="block-23 mb-3">
-                <ul>
-                  <li>
-                    <span className="icon icon-map-marker"></span>
-                    <span className="text">203 Fake St. Mountain View, San Francisco, California, USA</span>
-                  </li>
-                  <li>
-                    <a href="tel:+23923929210">
-                      <span className="icon icon-phone"></span>
-                      <span className="text">+2 392 3929 210</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:info@yourdomain.com">
-                      <span className="icon icon-envelope"></span>
-                      <span className="text">info@yourdomain.com</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+    <footer className="bg-navy text-gray-300 py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-xl font-bold text-white mb-6">Have a Questions?</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <span className="icon-map-marker text-primary mt-1"></span>
+                <span>203 Fake St. Mountain View, San Francisco, California, USA</span>
+              </li>
+              <li>
+                <a href="tel:+23923929210" className="flex items-center gap-3 hover:text-white transition-colors">
+                  <span className="icon-phone text-primary"></span>
+                  <span>+2 392 3929 210</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@yourdomain.com" className="flex items-center gap-3 hover:text-white transition-colors">
+                  <span className="icon-envelope text-primary"></span>
+                  <span>info@yourdomain.com</span>
+                </a>
+              </li>
+            </ul>
           </div>
-          <div className="col-md-6 col-lg-3">
-            <div className="ftco-footer-widget mb-5">
-              <h2 className="ftco-heading-2">Recent Blog</h2>
-              <div className="block-21 mb-4 d-flex">
-                <div
-                  className="blog-img mr-4"
-                  style={{ backgroundImage: "url('/images/image_1.jpg')" }}
-                ></div>
-                <div className="text">
-                  <h3 className="heading">
-                    <Link href="/blog/1">Even the all-powerful Pointing has no control about</Link>
-                  </h3>
-                  <div className="meta">
-                    <div><span className="icon-calendar"></span> June 27, 2019</div>
-                    <div><span className="icon-person"></span> Admin</div>
-                    <div><span className="icon-chat"></span> 19</div>
-                  </div>
-                </div>
-              </div>
-              <div className="block-21 mb-5 d-flex">
-                <div
-                  className="blog-img mr-4"
-                  style={{ backgroundImage: "url('/images/image_2.jpg')" }}
-                ></div>
-                <div className="text">
-                  <h3 className="heading">
-                    <Link href="/blog/2">Even the all-powerful Pointing has no control about</Link>
-                  </h3>
-                  <div className="meta">
-                    <div><span className="icon-calendar"></span> June 27, 2019</div>
-                    <div><span className="icon-person"></span> Admin</div>
-                    <div><span className="icon-chat"></span> 19</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3">
-            <div className="ftco-footer-widget mb-5 ml-md-4">
-              <h2 className="ftco-heading-2">Links</h2>
-              <ul className="list-unstyled">
-                <li>
-                  <Link href="/">
-                    <span className="ion-ios-arrow-round-forward mr-2"></span>Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about">
-                    <span className="ion-ios-arrow-round-forward mr-2"></span>About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services">
-                    <span className="ion-ios-arrow-round-forward mr-2"></span>Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/projects">
-                    <span className="ion-ios-arrow-round-forward mr-2"></span>Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact">
-                    <span className="ion-ios-arrow-round-forward mr-2"></span>Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-3">
-            <div className="ftco-footer-widget mb-5">
-              <h2 className="ftco-heading-2">Subscribe Us!</h2>
-              <form onSubmit={handleSubscribe} className="subscribe-form">
-                <div className="form-group">
-                  <input
-                    type="email"
-                    className="form-control mb-2 text-center"
-                    placeholder="Enter email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
+
+          {/* Recent Blog */}
+          <div>
+            <h3 className="text-xl font-bold text-white mb-6">Recent Blog</h3>
+            <div className="space-y-4">
+              {[1, 2].map((id) => (
+                <div key={id} className="flex gap-4">
+                  <div 
+                    className="w-20 h-16 rounded-lg bg-cover bg-center flex-shrink-0"
+                    style={{ backgroundImage: `url('/images/image_${id}.jpg')` }}
                   />
-                  <input type="submit" value="Subscribe" className="form-control submit px-3" />
+                  <div>
+                    <h4 className="text-sm font-medium text-white hover:text-primary transition-colors line-clamp-2">
+                      <Link href={`/blog/${id}`}>
+                        Even the all-powerful Pointing has no control about
+                      </Link>
+                    </h4>
+                    <div className="flex flex-wrap gap-3 text-xs text-gray-500 mt-2">
+                      <span className="flex items-center gap-1">
+                        <span className="icon-calendar"></span> June 27, 2019
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="icon-person"></span> Admin
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="icon-chat"></span> 19
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </form>
+              ))}
             </div>
-            <div className="ftco-footer-widget mb-5">
-              <h2 className="ftco-heading-2 mb-0">Connect With Us</h2>
-              <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li className="ftco-animate">
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                    <span className="icon-twitter"></span>
-                  </a>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-bold text-white mb-6">Links</h3>
+            <ul className="space-y-3">
+              {[
+                { href: '/', label: 'Home' },
+                { href: '/about', label: 'About' },
+                { href: '/services', label: 'Services' },
+                { href: '/projects', label: 'Projects' },
+                { href: '/contact', label: 'Contact' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href}
+                    className="flex items-center gap-2 hover:text-white hover:translate-x-1 transition-all"
+                  >
+                    <span className="ion-ios-arrow-round-forward text-primary"></span>
+                    {link.label}
+                  </Link>
                 </li>
-                <li className="ftco-animate">
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                    <span className="icon-facebook"></span>
-                  </a>
-                </li>
-                <li className="ftco-animate">
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                    <span className="icon-instagram"></span>
-                  </a>
-                </li>
-              </ul>
+              ))}
+            </ul>
+          </div>
+
+          {/* Subscribe & Social */}
+          <div>
+            <h3 className="text-xl font-bold text-white mb-6">Subscribe Us!</h3>
+            <form onSubmit={handleSubscribe} className="mb-8">
+              <input
+                type="email"
+                placeholder="Enter email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white 
+                           placeholder-gray-400 mb-3 focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <button 
+                type="submit"
+                className="w-full bg-primary text-white py-3 rounded-lg font-semibold 
+                           hover:bg-blue-700 transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
+
+            <h3 className="text-xl font-bold text-white mb-4">Connect With Us</h3>
+            <div className="flex gap-3">
+              {[
+                { href: 'https://twitter.com', icon: 'icon-twitter' },
+                { href: 'https://facebook.com', icon: 'icon-facebook' },
+                { href: 'https://instagram.com', icon: 'icon-instagram' },
+              ].map((social) => (
+                <a
+                  key={social.icon}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center 
+                             hover:bg-primary transition-colors"
+                >
+                  <span className={social.icon}></span>
+                </a>
+              ))}
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12 text-center">
-            <p>
-              Copyright &copy; {currentYear} All rights reserved | This template is made with{' '}
-              <i className="icon-heart" aria-hidden="true"></i> by{' '}
-              <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer">Colorlib</a>
-            </p>
-          </div>
+
+        {/* Copyright */}
+        <div className="border-t border-white/10 pt-8 text-center text-gray-500">
+          <p>
+            Copyright &copy; {currentYear} All rights reserved | This template is made with{' '}
+            <span className="icon-heart text-red-500"></span> by{' '}
+            <a 
+              href="https://colorlib.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:text-white transition-colors"
+            >
+              Colorlib
+            </a>
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-

@@ -1,23 +1,11 @@
 import HeroBanner from '@/components/HeroBanner';
-import Link from 'next/link';
+import Projects from '@/components/Projects';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Our Projects - Consolution',
-  description: 'Explore our portfolio of successful projects in branding, design, and web development.',
+  description: 'View our portfolio of successful business consulting projects.',
 };
-
-const projects = [
-  { id: 1, image: '/images/project-1.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 2, image: '/images/project-2.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 3, image: '/images/project-3.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 4, image: '/images/project-4.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 5, image: '/images/project-5.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 6, image: '/images/project-6.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 7, image: '/images/project-7.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 8, image: '/images/project-8.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 9, image: '/images/project-9.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-];
 
 export default function ProjectsPage() {
   return (
@@ -30,64 +18,34 @@ export default function ProjectsPage() {
         ]}
       />
 
-      <section className="ftco-section">
-        <div className="container">
-          <div className="row">
-            {projects.map((project) => (
-              <div key={project.id} className="col-md-4">
-                <div
-                  className="project mb-4 img ftco-animate d-flex justify-content-center align-items-center"
-                  style={{ backgroundImage: `url(${project.image})` }}
-                >
-                  <div className="overlay"></div>
-                  <Link
-                    href={`/projects/${project.id}`}
-                    className="btn-site d-flex align-items-center justify-content-center"
-                  >
-                    <span className="icon-subdirectory_arrow_right"></span>
-                  </Link>
-                  <div className="text text-center p-4">
-                    <h3>
-                      <Link href={`/projects/${project.id}`}>{project.title}</Link>
-                    </h3>
-                    <span>{project.category}</span>
-                  </div>
-                </div>
-              </div>
+      {/* Projects Grid */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <Projects showHeading={false} />
+          
+          {/* Pagination */}
+          <div className="flex justify-center gap-2 mt-12">
+            <button className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              &lt;
+            </button>
+            {[1, 2, 3, 4, 5].map((num) => (
+              <button 
+                key={num}
+                className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
+                  num === 1 
+                    ? 'bg-primary text-white' 
+                    : 'bg-gray-100 hover:bg-primary hover:text-white'
+                }`}
+              >
+                {num}
+              </button>
             ))}
-          </div>
-          <div className="row mt-5">
-            <div className="col text-center">
-              <div className="block-27">
-                <ul>
-                  <li>
-                    <a href="#">&lt;</a>
-                  </li>
-                  <li className="active">
-                    <span>1</span>
-                  </li>
-                  <li>
-                    <a href="#">2</a>
-                  </li>
-                  <li>
-                    <a href="#">3</a>
-                  </li>
-                  <li>
-                    <a href="#">4</a>
-                  </li>
-                  <li>
-                    <a href="#">5</a>
-                  </li>
-                  <li>
-                    <a href="#">&gt;</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <button className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              &gt;
+            </button>
           </div>
         </div>
       </section>
     </>
   );
 }
-

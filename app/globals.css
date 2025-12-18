@@ -1,161 +1,105 @@
-/* Global overrides for font paths */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Fix font paths for icomoon */
-@font-face {
-  font-family: 'icomoon';
-  src: url('/fonts/icomoon/icomoon.eot');
-  src: url('/fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/icomoon/icomoon.woff') format('woff'),
-    url('/fonts/icomoon/icomoon.ttf') format('truetype'),
-    url('/fonts/icomoon/icomoon.svg#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Fix font paths for flaticon */
-@font-face {
-  font-family: "Flaticon";
-  src: url("/fonts/flaticon/font/Flaticon.eot");
-  src: url("/fonts/flaticon/font/Flaticon.eot?#iefix") format("embedded-opentype"),
-       url("/fonts/flaticon/font/Flaticon.woff") format("woff"),
-       url("/fonts/flaticon/font/Flaticon.ttf") format("truetype"),
-       url("/fonts/flaticon/font/Flaticon.svg#Flaticon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Fix font paths for Open Iconic */
-@font-face {
-  font-family: 'Icons';
-  src: url('/fonts/open-iconic/open-iconic.eot');
-  src: url('/fonts/open-iconic/open-iconic.eot?#iconic-sm') format('embedded-opentype'),
-       url('/fonts/open-iconic/open-iconic.woff') format('woff'),
-       url('/fonts/open-iconic/open-iconic.ttf') format('truetype'),
-       url('/fonts/open-iconic/open-iconic.otf') format('opentype'),
-       url('/fonts/open-iconic/open-iconic.svg#iconic-sm') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Additional global styles */
-body {
-  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-
-/* Home slider styles */
-.home-slider-wrapper {
-  position: relative;
-  min-height: 600px;
-  overflow: hidden;
-}
-
-.home-slider-wrapper .slider-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  display: flex;
-  align-items: center;
-}
-
-.home-slider-wrapper .slider-item.active {
-  position: relative;
-  opacity: 1;
-}
-
-/* Counter animation */
-.ftco-counter .number {
-  font-size: 40px;
-  font-weight: 700;
-  color: #F96D00;
-}
-
-/* Loader animation */
-#ftco-loader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-#ftco-loader.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-#ftco-loader svg.circular {
-  animation: rotate 2s linear infinite;
-  transform-origin: center center;
-}
-
-#ftco-loader svg.circular circle.path {
-  stroke-dasharray: 1, 200;
-  stroke-dashoffset: 0;
-  animation: dash 1.5s ease-in-out infinite;
-  stroke-linecap: round;
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes dash {
-  0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -35px;
-  }
-  100% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -124px;
-  }
-}
-
-/* Navbar scrolled state */
-.ftco-navbar-light.scrolled {
-  background: #343a40 !important;
-}
-
-/* Animation classes */
-.ftco-animate {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Ensure responsive images */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Testimonial carousel responsive */
-@media (max-width: 991px) {
-  .testimonial-carousel .item {
-    flex: 0 0 100%;
-    display: none;
+/* Custom base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
   
-  .testimonial-carousel .item.center {
-    display: block;
+  body {
+    @apply font-nunito text-gray-600 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-900;
   }
 }
 
+/* Custom component styles */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-8 py-3 rounded-full font-semibold 
+           hover:bg-blue-700 transition-all duration-300 inline-block;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold 
+           hover:bg-primary hover:text-white transition-all duration-300 inline-block;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+  }
+
+  .section-subheading {
+    @apply text-gray-500 text-lg mb-8;
+  }
+
+  .nav-link {
+    @apply text-gray-700 hover:text-primary transition-colors duration-300 font-medium;
+  }
+
+  .nav-link-active {
+    @apply text-primary font-semibold;
+  }
+
+  .service-card {
+    @apply bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .project-card {
+    @apply relative overflow-hidden rounded-lg group;
+  }
+
+  .project-card-overlay {
+    @apply absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 
+           transition-opacity duration-300 flex items-center justify-center;
+  }
+
+  .testimonial-card {
+    @apply bg-white p-8 rounded-lg shadow-md;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 
+           focus:ring-primary focus:border-transparent outline-none transition-all;
+  }
+
+  .counter-item {
+    @apply text-center text-white;
+  }
+
+  .counter-number {
+    @apply text-5xl font-bold mb-2;
+  }
+
+  .footer-link {
+    @apply text-gray-400 hover:text-white transition-colors duration-300;
+  }
+
+  .social-icon {
+    @apply w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center 
+           text-white hover:bg-primary transition-colors duration-300;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .bg-overlay {
+    @apply relative;
+  }
+
+  .bg-overlay::before {
+    content: '';
+    @apply absolute inset-0 bg-navy/90;
+  }
+}
+
+/* Icon fonts - keeping these for compatibility */
+@import url('/fonts/flaticon/font/flaticon.css');

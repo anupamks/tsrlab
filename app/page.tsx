@@ -1,4 +1,3 @@
-import HomeSlider from '@/components/HomeSlider';
 import Counter from '@/components/Counter';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
@@ -7,118 +6,117 @@ import BlogList from '@/components/BlogList';
 import Testimonials from '@/components/Testimonials';
 import Link from 'next/link';
 
+const features = [
+  { icon: 'flaticon-collaboration', title: 'Organization', active: true },
+  { icon: 'flaticon-analysis', title: 'Risk Analysis', active: false },
+  { icon: 'flaticon-search-engine', title: 'Marketing Strategy', active: false },
+  { icon: 'flaticon-handshake', title: 'Capital Market', active: false },
+];
+
 export default function Home() {
   return (
     <>
-      {/* Hero Slider */}
-      <HomeSlider />
-
-      {/* About Section */}
-      <section className="ftco-section">
-        <div className="container">
-          <div className="row d-flex">
-            <div className="col-md-5 order-md-last wrap-about align-items-stretch">
-              <div className="wrap-about-border ftco-animate">
-                <div
-                  className="img"
-                  style={{ backgroundImage: "url('/images/about.jpg')" }}
-                ></div>
-                <div className="text">
-                  <h3>Read Our Success Story for Inspiration</h3>
-                  <p>
-                    Far far away, behind the word mountains, far from the countries Vokalia
-                    and Consonantia, there live the blind texts. Separated they live in
-                    Bookmarksgrove right at the coast of the Semantics, a large language
-                    ocean.
-                  </p>
-                  <p>
-                    On her way she met a copy. The copy warned the Little Blind Text, that
-                    where it came from it would have been rewritten a thousand times and
-                    everything that was left from its origin would be the word.
-                  </p>
-                  <p>
-                    <Link href="/contact" className="btn btn-primary py-3 px-4">
-                      Contact us
-                    </Link>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-7 wrap-about pr-md-4 ftco-animate">
-              <h2 className="mb-4">Our Main Features</h2>
-              <p>
-                On her way she met a copy. The copy warned the Little Blind Text, that
-                where it came from it would have been rewritten a thousand times and
-                everything that was left from its origin would be the word.
-              </p>
-              <div className="row mt-5">
-                <div className="col-lg-6">
-                  <div className="services active text-center">
-                    <div className="icon mt-2 d-flex justify-content-center align-items-center">
-                      <span className="flaticon-collaboration"></span>
-                    </div>
-                    <div className="text media-body">
-                      <h3>Organization</h3>
-                      <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="services text-center">
-                    <div className="icon mt-2 d-flex justify-content-center align-items-center">
-                      <span className="flaticon-analysis"></span>
-                    </div>
-                    <div className="text media-body">
-                      <h3>Risk Analysis</h3>
-                      <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="services text-center">
-                    <div className="icon mt-2 d-flex justify-content-center align-items-center">
-                      <span className="flaticon-search-engine"></span>
-                    </div>
-                    <div className="text media-body">
-                      <h3>Marketing Strategy</h3>
-                      <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="services text-center">
-                    <div className="icon mt-2 d-flex justify-content-center align-items-center">
-                      <span className="flaticon-handshake"></span>
-                    </div>
-                    <div className="text media-body">
-                      <h3>Capital Market</h3>
-                      <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* Hero Section */}
+      <section 
+        className="relative min-h-[70vh] flex items-center bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/bg_1.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-primary/80"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl" data-aos="fade-up">
+            <span className="text-white/80 uppercase tracking-wider text-sm mb-4 block">
+              Welcome to Consolution
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              We Are The Best Consulting Agency
+            </h1>
+            <p className="text-white/80 text-lg mb-8 max-w-xl">
+              A small river named Duden flows by their place and supplies it with the necessary regelialia.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link 
+                href="/contact"
+                className="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors"
+              >
+                Get Started
+              </Link>
+              <Link 
+                href="/about"
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-primary transition-colors"
+              >
+                Learn More
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section
-        className="ftco-intro ftco-no-pb img"
-        style={{ backgroundImage: "url('/images/bg_3.jpg')" }}
-      >
-        <div className="container">
-          <div className="row justify-content-center mb-5">
-            <div className="col-md-10 text-center heading-section heading-section-white ftco-animate">
-              <h2 className="mb-0">You Always Get the Best Guidance</h2>
+      {/* About Section */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Features */}
+            <div data-aos="fade-right">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Our Main Features
+              </h2>
+              <p className="text-gray-600 mb-8">
+                On her way she met a copy. The copy warned the Little Blind Text, that
+                where it came from it would have been rewritten a thousand times and
+                everything that was left from its origin would be the word.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {features.map((feature, index) => (
+                  <div 
+                    key={index}
+                    className={`p-6 rounded-xl transition-all duration-300 ${
+                      feature.active 
+                        ? 'bg-primary text-white shadow-xl' 
+                        : 'bg-white border border-gray-100 hover:shadow-lg hover:border-primary/20'
+                    }`}
+                  >
+                    <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 ${
+                      feature.active ? 'bg-white/20' : 'bg-primary/10'
+                    }`}>
+                      <span className={`${feature.icon} text-2xl ${feature.active ? 'text-white' : 'text-primary'}`}></span>
+                    </div>
+                    <h3 className={`text-lg font-bold mb-2 ${feature.active ? 'text-white' : 'text-gray-900'}`}>
+                      {feature.title}
+                    </h3>
+                    <p className={feature.active ? 'text-white/80' : 'text-gray-600'}>
+                      Far far away, behind the word mountains, far from the countries Vokalia.
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Success Story Card */}
+            <div className="relative" data-aos="fade-left">
+              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div 
+                  className="h-64 bg-cover bg-center"
+                  style={{ backgroundImage: "url('/images/about.jpg')" }}
+                />
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    Read Our Success Story for Inspiration
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Far far away, behind the word mountains, far from the countries Vokalia
+                    and Consonantia, there live the blind texts.
+                  </p>
+                  <p className="text-gray-600 mb-6">
+                    On her way she met a copy. The copy warned the Little Blind Text.
+                  </p>
+                  <Link 
+                    href="/contact"
+                    className="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+                  >
+                    Contact us
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -131,22 +129,22 @@ export default function Home() {
       <Services />
 
       {/* CTA Section */}
-      <section
-        className="ftco-intro ftco-no-pb img"
+      <section 
+        className="relative py-16 bg-cover bg-center bg-fixed"
         style={{ backgroundImage: "url('/images/bg_1.jpg')" }}
       >
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-9 col-md-8 d-flex align-items-center heading-section heading-section-white ftco-animate">
-              <h2 className="mb-3 mb-md-0">You Always Get the Best Guidance</h2>
-            </div>
-            <div className="col-lg-3 col-md-4 ftco-animate">
-              <p className="mb-0">
-                <Link href="/contact" className="btn btn-white py-3 px-4">
-                  Request Quote
-                </Link>
-              </p>
-            </div>
+        <div className="absolute inset-0 bg-primary/90"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-white text-center md:text-left">
+              You Always Get the Best Guidance
+            </h2>
+            <Link 
+              href="/contact"
+              className="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors whitespace-nowrap"
+            >
+              Request Quote
+            </Link>
           </div>
         </div>
       </section>
@@ -165,4 +163,3 @@ export default function Home() {
     </>
   );
 }
-

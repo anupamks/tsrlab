@@ -16,10 +16,9 @@ export default function Loader() {
   if (!isLoading) return null;
 
   return (
-    <div id="ftco-loader" className={`fullscreen ${isLoading ? 'show' : ''}`}>
-      <svg className="circular" width="48px" height="48px">
+    <div className="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
+      <svg className="animate-spin" width="48" height="48" viewBox="0 0 48 48">
         <circle
-          className="path-bg"
           cx="24"
           cy="24"
           r="22"
@@ -28,17 +27,18 @@ export default function Loader() {
           stroke="#eeeeee"
         />
         <circle
-          className="path"
           cx="24"
           cy="24"
           r="22"
           fill="none"
           strokeWidth="4"
           strokeMiterlimit="10"
-          stroke="#F96D00"
+          stroke="#007bff"
+          strokeDasharray="138"
+          strokeDashoffset="35"
+          className="origin-center"
         />
       </svg>
     </div>
   );
 }
-
