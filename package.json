@@ -1,0 +1,30 @@
+{
+  "name": "consolution-nextjs",
+  "version": "1.0.0",
+  "description": "Consolution - Business Consulting Next.js Website",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "aos": "^2.3.4",
+    "bootstrap": "^4.6.2",
+    "jquery": "^3.7.1",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/jquery": "^3.5.29",
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "typescript": "^5.3.3"
+  }
+}
+
