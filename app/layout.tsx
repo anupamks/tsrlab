@@ -3,7 +3,6 @@ import { Nunito_Sans } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
-import AOSProvider from '@/components/AOSProvider';
 import './globals.css';
 
 // Keep icon fonts
@@ -14,6 +13,7 @@ import '@/styles/icomoon.css';
 // Dynamic imports with no SSR to prevent hydration issues
 const TopBar = dynamic(() => import('@/components/TopBar'), { ssr: false });
 const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
+const AOSProvider = dynamic(() => import('@/components/AOSProvider'), { ssr: false });
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
