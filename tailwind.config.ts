@@ -9,12 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#007bff',
-        secondary: '#17a2b8',
+        primary: 'var(--color-primary)',
+        'primary-hover': 'var(--color-primary-hover)',
+        secondary: 'var(--color-accent)',
         dark: '#343a40',
-        'navy': '#0d1128',
+        'navy': 'var(--color-navbar)',
         'blue-dark': '#1a1f36',
-        'accent': '#17a2b8',
+        'accent': 'var(--color-accent)',
       },
       fontFamily: {
         'nunito': ['var(--font-nunito)', 'Nunito Sans', 'sans-serif'],

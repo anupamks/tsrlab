@@ -7,7 +7,7 @@ const contactInfo = [
   {
     icon: 'icon-map-o',
     title: 'Address:',
-    text: '198 West 21th Street, Suite 721 New York NY 10016',
+    text: 'International City, Dubai, UAE',
     link: null,
   },
   {
@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: 'icon-envelope-o',
     title: 'Email:',
-    text: 'info@yoursite.com',
-    link: 'mailto:info@yoursite.com',
+    text: 'info@electroitsolutions.com',
+    link: 'mailto:info@electroitsolutions.com',
   },
 ];
 
@@ -126,10 +126,10 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map */}
+      {/* Map - Electroitsolutions, International City, Dubai */}
       <section className="h-96">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968505619!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1sen!2sus!4v1510579767645"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.168507714088!2d55.37661841500756!3d25.16557998389872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f61c0e8a3b5f9%3A0x7e3b4a0b8c6d2a1e!2sInternational%20City%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1702915200000!5m2!1sen!2s"
           width="100%"
           height="100%"
           style={{ border: 0 }}

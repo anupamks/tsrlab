@@ -11,9 +11,9 @@ import '@/styles/ionicons.min.css';
 import '@/styles/icomoon.css';
 
 // Dynamic imports with no SSR to prevent hydration issues
-const TopBar = dynamic(() => import('@/components/TopBar'), { ssr: false });
 const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
 const AOSProvider = dynamic(() => import('@/components/AOSProvider'), { ssr: false });
+const ThemeSwitcher = dynamic(() => import('@/components/ThemeSwitcher'), { ssr: false });
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -36,12 +36,12 @@ export default function RootLayout({
     <html lang="en" className={nunitoSans.variable}>
       <body className="font-nunito antialiased">
         <Loader />
-        <TopBar />
         <Navbar />
         <AOSProvider>
           <main>{children}</main>
         </AOSProvider>
         <Footer />
+        <ThemeSwitcher />
       </body>
     </html>
   );

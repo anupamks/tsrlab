@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -16,21 +17,30 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = (e: FormEvent) => {
-    e.preventDefault();
-    console.log('Search:', searchQuery);
-  };
 
   return (
     <nav className="bg-navy sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 relative">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo - extends 30% below navbar */}
+          <Link href="/" className="flex-shrink-0 absolute top-0 left-4 z-[60]">
+            <Image 
+              src="/images/logo.png" 
+              alt="TRSLAB" 
+              width={160} 
+              height={115} 
+              className="h-[7rem] w-auto"
+              priority
+            />
+          </Link>
+          
+          {/* Spacer for logo */}
+          <div className="w-44"></div>
+
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
             aria-label="Toggle navigation"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,10 +54,10 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <ul className={`
-            md:flex items-center gap-1
+            lg:flex items-center gap-1
             ${isOpen 
-              ? 'absolute top-16 left-0 right-0 bg-navy flex flex-col p-4 border-t border-white/10' 
-              : 'hidden md:flex'
+              ? 'absolute top-20 left-0 right-0 bg-navy flex flex-col p-4 border-t border-white/10 z-50' 
+              : 'hidden lg:flex'
             }
           `}>
             {navItems.map((item) => (
@@ -69,26 +79,43 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Search Form */}
-          <form onSubmit={handleSearch} className="flex items-center">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-32 md:w-40 bg-white/10 border border-white/20 rounded-full px-4 py-2 
-                           text-white text-sm placeholder-gray-400 focus:outline-none focus:ring-2 
-                           focus:ring-primary focus:border-transparent transition-all"
-              />
-              <button 
-                type="submit" 
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
-              >
-                <span className="ion-ios-search text-lg"></span>
-              </button>
+          {/* Contact Info & CTA */}
+          <div className="hidden lg:flex items-center gap-6">
+            {/* Email */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                <span className="icon-paper-plane text-primary text-lg"></span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs text-gray-400 uppercase tracking-wider">Email</span>
+                <a href="mailto:info@electroitsolutions.com" className="text-sm font-semibold text-white hover:text-primary transition-colors">
+                  info@electroitsolutions.com
+                </a>
+              </div>
             </div>
-          </form>
+
+            {/* Phone */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                <span className="icon-phone2 text-primary text-lg"></span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xs text-gray-400 uppercase tracking-wider">Call</span>
+                <a href="tel:+971585912084" className="text-sm font-semibold text-white hover:text-primary transition-colors">
+                  +971 58 591 2084
+                </a>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <Link 
+              href="/contact" 
+              className="bg-primary text-white px-6 py-3 rounded-full font-semibold text-sm
+                         hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/30"
+            >
+              Free Consulting
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

@@ -24,7 +24,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <span className="icon-map-marker text-primary mt-1"></span>
-                <span>203 Fake St. Mountain View, San Francisco, California, USA</span>
+                <span>International City, Dubai, UAE</span>
               </li>
               <li>
                 <a href="tel:+971585912084" className="flex items-center gap-3 hover:text-white transition-colors">
@@ -33,9 +33,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@yourdomain.com" className="flex items-center gap-3 hover:text-white transition-colors">
+                <a href="mailto:info@electroitsolutions.com" className="flex items-center gap-3 hover:text-white transition-colors">
                   <span className="icon-envelope text-primary"></span>
-                  <span>info@yourdomain.com</span>
+                  <span>info@electroitsolutions.com</span>
                 </a>
               </li>
             </ul>
