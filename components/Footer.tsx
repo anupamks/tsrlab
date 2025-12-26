@@ -33,9 +33,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@electroitsolutions.com" className="flex items-center gap-3 hover:text-white transition-colors">
+                <a href="mailto:anupam@tsrlab.com" className="flex items-center gap-3 hover:text-white transition-colors">
                   <span className="icon-envelope text-primary"></span>
-                  <span>info@electroitsolutions.com</span>
+                  <span>anupam@tsrlab.com</span>
                 </a>
               </li>
             </ul>

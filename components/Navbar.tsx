@@ -8,9 +8,8 @@ import { useState } from 'react';
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/services', label: 'Services' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/research-services', label: 'Research Services' },
+  { href: '/insights', label: 'TSR Insights' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -88,8 +87,8 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xs text-gray-400 uppercase tracking-wider">Email</span>
-                <a href="mailto:info@electroitsolutions.com" className="text-sm font-semibold text-white hover:text-primary transition-colors">
-                  info@electroitsolutions.com
+                <a href="mailto:anupam@tsrlab.com" className="text-sm font-semibold text-white hover:text-primary transition-colors">
+                  anupam@tsrlab.com
                 </a>
               </div>
             </div>
@@ -113,7 +112,7 @@ export default function Navbar() {
               className="bg-primary text-white px-6 py-3 rounded-full font-semibold text-sm
                          hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/30"
             >
-              Free Consulting
+              Work with us
             </Link>
           </div>
         </div>

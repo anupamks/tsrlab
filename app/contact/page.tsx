@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: 'icon-envelope-o',
     title: 'Email:',
-    text: 'info@electroitsolutions.com',
-    link: 'mailto:info@electroitsolutions.com',
+    text: 'anupam@tsrlab.com',
+    link: 'mailto:anupam@tsrlab.com',
   },
 ];
 
