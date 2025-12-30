@@ -3,16 +3,17 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Research Services - Consolution',
+  title: 'Research Services - TSR Lab',
   description: 'Comprehensive research services to help your business make informed decisions and stay ahead of the competition.',
 };
 
 const researchServices = [
   {
     icon: 'flaticon-analysis',
-    title: 'Market Research',
-    description: 'Comprehensive market analysis to understand industry trends, customer behavior, and competitive landscape.',
-    features: ['Industry Analysis', 'Consumer Insights', 'Competitive Intelligence', 'Market Sizing'],
+    title: 'AI x Research',
+    description: 'GenAI-powered research workflows for professionals and institutions',
+    features: ['GenAI-research workshops for professionals', 'AI-assisted survey and interview guide design
+', 'Rapid data collection and synthesis', 'Computational policy research'],
   },
   {
     icon: 'flaticon-search-engine',
