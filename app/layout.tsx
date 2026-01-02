@@ -22,9 +22,9 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Consolution - Business Consulting',
-  description: 'We Are The Best Consulting Agency - Helping businesses grow with expert guidance',
-  keywords: 'consulting, business, finance, strategy, marketing',
+  title: 'Market Research and Policy Advisory',
+  description: 'Expert market research and policy advisory services. Comprehensive data analytics, economic research, and strategic insights to help businesses and organizations make informed decisions.',
+  keywords: 'market research, policy advisory, economic research, data analytics, business intelligence, strategic consulting, market analysis, policy development, research services, market insights, competitive analysis, industry research',
 };
 
 export default function RootLayout({

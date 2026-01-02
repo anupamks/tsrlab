@@ -91,7 +91,7 @@ export default function ResearchServicesPage() {
                 Expert Research Services for Informed Decisions
               </h2>
               <p className="text-gray-600 mb-4">
-                At Consolution, we provide comprehensive research services that empower businesses
+                At TSR Lab, we provide comprehensive research services that empower businesses
                 to make data-driven decisions. Our expert team combines advanced methodologies with
                 industry expertise to deliver actionable insights.
               </p>

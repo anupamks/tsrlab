@@ -4,14 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const projects = [
-  { id: 1, image: '/images/project-1.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 2, image: '/images/project-2.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 3, image: '/images/project-3.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 4, image: '/images/project-4.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 5, image: '/images/project-5.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 6, image: '/images/project-6.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 7, image: '/images/project-7.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
-  { id: 8, image: '/images/project-8.jpg', title: 'Branding & Illustration Design', category: 'Web Design' },
+  { id: 1, image: '/images/Home.png', title: 'Branding & Illustration Design', category: 'Web Design' },
+  { id: 2, image: '/images/2.png', title: 'Branding & Illustration Design', category: 'Web Design' },
+  { id: 3, image: '/images/3.png', title: 'Branding & Illustration Design', category: 'Web Design' },
+  { id: 4, image: '/images/4.png', title: 'Branding & Illustration Design', category: 'Web Design' },
+  
 ];
 
 interface ProjectsProps {
@@ -31,10 +28,10 @@ export default function Projects({ showHeading = true, limit, fullWidth = false 
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Recent Projects
             </h2>
-            <p className="text-gray-600">
+            {/* <p className="text-gray-600">
               Separated they live in. A small river named Duden flows by their place and
               supplies it with the necessary regelialia. It is a paradisematic country
-            </p>
+            </p> */}
           </div>
         )}
         

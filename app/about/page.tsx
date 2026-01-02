@@ -5,8 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us - Consolution',
-  description: 'Learn more about Consolution - the best consulting agency helping businesses grow.',
+  title: 'About Us - TSR Lab',
+  description: 'Learn more about TSR Lab - the best consulting agency helping businesses grow.',
 };
 
 export default function AboutPage() {
@@ -27,23 +27,16 @@ export default function AboutPage() {
             {/* Text Content */}
             <div data-aos="fade-right">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Welcome to Consolution
+                Welcome to TSR Lab
               </h2>
               <p className="text-gray-600 mb-4">
-                On her way she met a copy. The copy warned the Little Blind Text, that
-                where it came from it would have been rewritten a thousand times and
-                everything that was left from its origin would be the word.
+                At TSR Lab, impactful decisions start with reliable and valid data. We bring decision making insights to you, through surveys, advanced analytics, and data-driven storytelling.
               </p>
               <p className="text-gray-600 mb-4">
-                A small river named Duden flows by their place and supplies it with the
-                necessary regelialia. It is a paradisematic country, in which roasted
-                parts of sentences fly into your mouth.
+                We combine scientific research methodologies, rigorous analysis, and trusted data sources with expert oversight to help organizations plan, validate, and communicate decisions.
               </p>
               <p className="text-gray-600">
-                On her way she met a copy. The copy warned the Little Blind Text, that
-                where it came from it would have been rewritten a thousand times and
-                everything that was left from its origin would be the word &quot;and&quot; and the
-                Little Blind Text should turn around and return to its own, safe country.
+                Our innovative products and GenAI integrated research flows deliver instant intelligence on your customer, competitor, and market factors. We prepare you for today, tomorrow, and the day after.
               </p>
             </div>
 
@@ -56,19 +49,21 @@ export default function AboutPage() {
                 />
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Read Our Success Story for Inspiration
+                    Join our upcoming AI x Research Bootcamp
                   </h3>
                   <p className="text-gray-600 mb-6">
                     Far far away, behind the word mountains, far from the countries
                     Vokalia and Consonantia, there live the blind texts. Separated they
                     live in Bookmarksgrove right at the coast of the Semantics.
                   </p>
-                  <Link 
-                    href="/contact"
+                  <a 
+                    href="https://forms.gle/3DhuivR5PJKghuxT9"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
                   >
-                    Contact us
-                  </Link>
+                    Express your interest
+                  </a>
                 </div>
               </div>
             </div>
@@ -102,18 +97,16 @@ export default function AboutPage() {
             {/* Content */}
             <div data-aos="fade-left">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                We Are the Best Consulting Agency
+                We Innovate Market Research with Cutting Edge AI Solutions
               </h2>
               <p className="text-gray-600 mb-4">
-                Separated they live in. A small river named Duden flows by their place
-                and supplies it with the necessary regelialia. It is a paradisematic
-                country. A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
+                We Fasttrack Economic and Policy Research with GenAI embedded research methodologies
+              </p>
+              <p className="text-gray-600 mb-4">
+                At TSR Lab, impactful decisions start with reliable and valid data. We bring decision making insights to you, through surveys, advanced analytics, and data-driven storytelling.
               </p>
               <p className="text-gray-600">
-                A small river named Duden flows by their place and supplies it with the
-                necessary regelialia. It is a paradisematic country, in which roasted
-                parts of sentences fly into your mouth.
+                We combine scientific research methodologies, rigorous analysis, and trusted data sources with expert oversight to help organizations plan, validate, and communicate decisions.
               </p>
             </div>
           </div>
@@ -121,10 +114,10 @@ export default function AboutPage() {
       </section>
 
       {/* Counter */}
-      <Counter />
+      {/* <Counter /> */}
 
       {/* Testimonials */}
-      <Testimonials />
+      {/* <Testimonials /> */}
     </>
   );
 }

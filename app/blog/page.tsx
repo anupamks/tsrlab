@@ -3,7 +3,7 @@ import BlogList from '@/components/BlogList';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blog - Consolution',
+  title: 'Blog - TSR Lab',
   description: 'Read our latest articles on business consulting, finance, and strategy.',
 };
 

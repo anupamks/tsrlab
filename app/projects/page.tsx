@@ -3,7 +3,7 @@ import Projects from '@/components/Projects';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Projects - Consolution',
+  title: 'Our Projects - TSR Lab',
   description: 'View our portfolio of successful business consulting projects.',
 };
 

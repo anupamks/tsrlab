@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Services - Consolution',
+  title: 'Our Services - TSR Lab',
   description: 'Explore our range of business consulting services to help your business grow.',
 };
 

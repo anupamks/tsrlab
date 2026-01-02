@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'TSR Insights - Consolution',
+  title: 'TSR Insights - TSR Lab',
   description: 'Explore our latest insights, research, and analysis on business trends and strategies.',
 };
 
