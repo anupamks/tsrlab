@@ -1,5 +1,20 @@
 import type { Metadata } from 'next';
+import { Poppins, Inter } from 'next/font/google';
 import './globals.css';
+
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
+
+const inter = Inter({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: 'TSR Lab - Market Research and Policy Advisory',
@@ -15,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body>{children}</body>
     </html>
   );

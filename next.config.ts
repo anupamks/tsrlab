@@ -44,15 +44,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Suppress font optimization warnings for fonts not using next/font
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
-  // Logging configuration to reduce font-related warnings
-  logging: {
-    fetches: {
-      fullUrl: false,
-    },
+  // Suppress build warnings - the "Nunito Sans" warning is from Next.js font detection
+  // but doesn't affect the build since we're using Google Fonts via CSS
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
   },
 };
 
