@@ -44,6 +44,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Suppress font optimization warnings for fonts not using next/font
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
+  // Logging configuration to reduce font-related warnings
+  logging: {
+    fetches: {
+      fullUrl: false,
+    },
+  },
 };
 
 export default nextConfig;
