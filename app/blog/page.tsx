@@ -1,24 +1,16 @@
-import HeroBanner from '@/components/HeroBanner';
-import BlogList from '@/components/BlogList';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Blog - TSR Lab',
-  description: 'Read our latest articles on business consulting, finance, and strategy.',
-};
+import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import BlogHero from '../components/blog/BlogHero';
+import BlogList from '../components/blog/BlogList';
 
 export default function BlogPage() {
   return (
-    <>
-      <HeroBanner
-        title="Blog"
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Blog' },
-        ]}
-      />
-
-      <BlogList showHeading={false} />
-    </>
+    <main className="min-h-screen">
+      <Header />
+      <BlogHero />
+      <BlogList />
+      <Footer />
+    </main>
   );
 }

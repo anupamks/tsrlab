@@ -1,28 +1,15 @@
 'use client';
 
-import HeroBanner from '@/components/HeroBanner';
-import { useState, FormEvent } from 'react';
-
-const contactInfo = [
-  {
-    icon: 'icon-map-o',
-    title: 'Address:',
-    text: 'International City, Dubai, UAE',
-    link: null,
-  },
-  {
-    icon: 'icon-phone',
-    title: 'Phone:',
-    text: '+971 58 591 2084',
-    link: 'tel:+971585912084',
-  },
-  {
-    icon: 'icon-envelope-o',
-    title: 'Email:',
-    text: 'anupam@tsrlab.com',
-    link: 'mailto:anupam@tsrlab.com',
-  },
-];
+import React, { useState } from 'react';
+import PageWrapper from '../components/PageWrapper';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import PageHero from '../components/contact/PageHero';
+import LocationIcon from '../components/icons/location.svg';
+import PhoneIcon from '../components/icons/phone.svg';
+import EmailIcon from '../components/icons/email.svg';
+import SendIcon from '../components/icons/send.svg';
+import { User, Mail, Tag } from 'lucide-react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -32,112 +19,210 @@ export default function ContactPage() {
     message: '',
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact Form:', formData);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    console.log('Form submitted:', formData);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
-    <>
-      <HeroBanner
-        title="Contact Us"
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Contact' },
-        ]}
-      />
+    <PageWrapper>
+      <main className="min-h-screen">
+      <Header />
+      <PageHero />
 
-      {/* Contact Section */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          {/* Contact Info */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {contactInfo.map((info, index) => (
-              <div 
-                key={index}
-                className="text-center"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className={`${info.icon} text-primary text-2xl`}></span>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{info.title}</h3>
-                {info.link ? (
-                  <a href={info.link} className="text-gray-600 hover:text-primary transition-colors">
-                    {info.text}
-                  </a>
-                ) : (
-                  <p className="text-gray-600">{info.text}</p>
-                )}
+      {/* Contact Info Cards */}
+      <section className="pb-20 bg-[#fef3f2]">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Address Card */}
+            <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#ff3333]/10 mb-6">
+                <LocationIcon className="w-6 h-6" style={{ color: '#ff3333' }} />
               </div>
-            ))}
-          </div>
+              <h3 className="text-lg font-bold text-[#111827] mb-3">Address</h3>
+              <p className="text-[#6b7280] text-sm leading-relaxed">
+                International City,<br />
+                Dubai, #AE
+              </p>
+            </div>
 
-          {/* Contact Form */}
-          <div className="max-w-2xl mx-auto" data-aos="fade-up">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8">
-              If you got any questions<br />
-              please do not hesitate to send us a message
-            </h2>
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-              />
-              <input
-                type="text"
-                placeholder="Subject"
-                value={formData.subject}
-                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-              />
-              <textarea
-                placeholder="Message"
-                rows={5}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
-              />
-              <button
-                type="submit"
-                className="w-full bg-primary text-white py-4 rounded-lg font-bold hover:bg-blue-700 transition-colors"
-              >
-                Send Message
-              </button>
+            {/* Phone Card */}
+            <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#ff3333]/10 mb-6">
+                <PhoneIcon className="w-6 h-6" style={{ color: '#ff3333' }} />
+              </div>
+              <h3 className="text-lg font-bold text-[#111827] mb-3">Phone</h3>
+              <p className="text-[#6b7280] text-sm">+971 58 591 2084</p>
+            </div>
+
+            {/* Email Card */}
+            <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#ff3333]/10 mb-6">
+                <EmailIcon className="w-6 h-6" style={{ color: '#ff3333' }} />
+              </div>
+              <h3 className="text-lg font-bold text-[#111827] mb-3">Email</h3>
+              <p className="text-[#6b7280] text-sm">anupam@tsrlab.com</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-20 bg-[#fef3f2]">
+        <div className="container-custom">
+          <div className="max-w-2xl mx-auto">
+            {/* Form Header */}
+            <div className="text-center space-y-4 mb-12">
+              <p className="text-xs font-bold tracking-[0.15em] text-[#ff3333] uppercase">
+                Get In Touch
+              </p>
+              <h2 className="text-4xl font-bold text-[#111827] leading-tight">
+                If you got any questions<br />
+                please do not hesitate to send us a<br />
+                message
+              </h2>
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Name Input */}
+                <div>
+                  <label className="block text-sm font-medium text-[#374151] mb-2">
+                    Your Name
+                  </label>
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9ca3af]">
+                      <User className="w-4 h-4" />
+                    </div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="John Doe"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full pl-12 pr-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+                    />
+                  </div>
+                </div>
+
+                {/* Email Input */}
+                <div>
+                  <label className="block text-sm font-medium text-[#374151] mb-2">
+                    Your Email
+                  </label>
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9ca3af]">
+                      <Mail className="w-4 h-4" />
+                    </div>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full pl-12 pr-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Subject Input */}
+              <div>
+                <label className="block text-sm font-medium text-[#374151] mb-2">
+                  Subject
+                </label>
+                <div className="relative">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9ca3af]">
+                    <Tag className="w-4 h-4" />
+                  </div>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="How can we help?"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full pl-12 pr-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] transition-all"
+                  />
+                </div>
+              </div>
+
+              {/* Message Textarea */}
+              <div>
+                <label className="block text-sm font-medium text-[#374151] mb-2">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  placeholder="Write your message here..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={6}
+                  className="w-full px-4 py-3.5 rounded-lg border border-gray-200 bg-[#f9fafb] focus:outline-none focus:border-[#ff3333] focus:ring-2 focus:ring-[#ff3333]/20 text-sm text-[#1f2937] placeholder:text-[#9ca3af] resize-none transition-all"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <div>
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#ff3333] to-[#f97316] text-white font-semibold text-base shadow-lg shadow-[#ff3333]/30 hover:shadow-xl hover:shadow-[#ff3333]/40 hover:scale-[1.02] transition-all duration-300"
+                >
+                  Send Message
+                  <SendIcon className="w-4 h-4" style={{ color: '#ffffff' }} />
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </section>
 
-      {/* Map - Electroitsolutions, International City, Dubai */}
-      <section className="h-96">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.168507714088!2d55.37661841500756!3d25.16557998389872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f61c0e8a3b5f9%3A0x7e3b4a0b8c6d2a1e!2sInternational%20City%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1702915200000!5m2!1sen!2s"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+      {/* Map Section */}
+      <section className="pb-0 relative bg-[#fef3f2]">
+        <div className="w-full h-[400px] relative">
+          {/* Google Maps Embed */}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.189883834848!2d55.41476!3d25.170084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5e5e5e5e5f%3A0x1234567890abcdef!2sInternational%20City%2C%20Dubai!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="grayscale"
+          />
+          
+          {/* Location Card Overlay */}
+          <div className="absolute bottom-8 right-8 bg-white rounded-xl p-6 shadow-lg max-w-sm">
+            <h3 className="text-lg font-bold text-[#111827] mb-2">Our Location</h3>
+            <p className="text-sm text-[#6b7280] mb-4">
+              Dubai International City,<br />
+              Warsan airst – Dubai – United Arab Emirates
+            </p>
+            <a
+              href="https://maps.google.com/?q=Dubai+International+City"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#ff3333] hover:text-[#f97316] transition-colors"
+            >
+              Get Directions
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </section>
-    </>
+
+      <Footer />
+      </main>
+    </PageWrapper>
   );
 }
