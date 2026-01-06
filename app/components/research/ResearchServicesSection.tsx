@@ -11,39 +11,39 @@ export default function ResearchServicesSection() {
   const services = [
     {
       icon: SearchIcon,
-      title: 'Market Research',
-      description: 'Comprehensive market research solutions to understand industry trends, customer behavior, and competitive landscape.',
-      items: ['Industry Analysis', 'Consumer Insights', 'Competitive Intelligence', 'Market Sizing'],
-    },
-    {
-      icon: ChartPieIcon,
-      title: 'Data Analysis & Insights',
-      description: 'Transform raw data into actionable insights to drive business intelligence and strategic decision-making.',
-      items: ['Statistical Analysis', 'Predictive Modeling', 'Data Visualization', 'Performance Metrics'],
-    },
-    {
-      icon: ChipIcon,
-      title: 'Innovation & Tech Research',
-      description: 'Stay ahead of the curve with research focused on identifying emerging trends and innovation opportunities.',
-      items: ['Tech Trends Analysis', 'Innovation Assessment', 'R&D Strategy', 'Technology Scouting'],
-    },
-    {
-      icon: BriefcaseIcon,
-      title: 'Business Intelligence',
-      description: 'Strategic business intelligence to support decision-making and drive organizational growth.',
-      items: ['Strategic Planning', 'Risk Assessment', 'Competitive Benchmarking', 'Performance Benchmarking'],
-    },
-    {
-      icon: UsersChartIcon,
-      title: 'Competitive Analysis',
-      description: 'In-depth competitive analysis to help you understand market positioning and competitive dynamics.',
-      items: ['Competitor Profiling', 'Market Positioning', 'SWOT Analysis', 'Strategic Recommendations'],
+      title: 'Market & Consumer Intelligence',
+      description: 'Data-driven market research helping organizations understand customers, competitors, and growth opportunities with confidence.',
+      items: ['Market sizing', 'Competitor benchmarking', 'Consumer research', 'User Feedback analytics'],
     },
     {
       icon: DocumentIcon,
-      title: 'Custom Research',
-      description: 'Tailored research solutions designed to meet your specific business needs and objectives.',
-      items: ['Custom Methodologies', 'Dedicated Research Teams', 'Flexible Engagement', 'Confidential Reports'],
+      title: 'Policy & Economic Research',
+      description: 'Evidence-led policy research supporting governments and institutions across design, evaluation, benchmarking, and decision-making processes.',
+      items: ['Policy benchmarking', 'Scheme evaluation', 'Impact tracking', 'Policy briefs'],
+    },
+    {
+      icon: ChipIcon,
+      title: 'AI × Research Enablement',
+      description: 'GenAI-enabled research workflows combining automation, synthesis, and expert interpretation for faster, reliable insights.',
+      items: ['GenAI workshops', 'Workflow automation', 'Synthetic data', 'Research mentorship'],
+    },
+    {
+      icon: BriefcaseIcon,
+      title: 'Executive Advisory',
+      description: 'Decision-ready intelligence supporting senior leaders through strategic research, benchmarking, and executive-level advisory support.',
+      items: ['Executive briefs', 'Scenario planning', 'Strategic benchmarking', 'Thought leadership'],
+    },
+    {
+      icon: UsersChartIcon,
+      title: 'Insight-to-Product',
+      description: 'Research-led support helping founders transform validated insights into scalable, build-ready digital products.',
+      items: ['Idea validation', 'User insights', 'Feature prioritization', 'Build support'],
+    },
+    {
+      icon: ChartPieIcon,
+      title: 'Research Methods',
+      description: 'Rigorous qualitative, quantitative, and AI-integrated methodologies ensuring reliability, validity, and consistency across research engagements.',
+      items: ['Primary/Secondary research', 'GenAI x Computational Social Science', 'Thematic Discourse Analysis', 'Quantitative Analysis'],
     },
   ];
 

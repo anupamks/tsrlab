@@ -22,7 +22,7 @@ export default function Footer() {
               className="h-12 w-auto"
             />
             <p className="text-xs md:text-sm lg:text-base text-[#4b5563] leading-relaxed">
-              Leading technology solutions provider helping businesses thrive in the digital age.
+              A specialist boutique firm providing research, analytics, and public policy consulting to support strategic decision-making for SMEs and large enterprises
             </p>
             <div className="flex items-center gap-3">
               <a href="#" className="p-2 text-[#374151] hover:text-[#ff3333] transition-colors">
@@ -127,13 +127,21 @@ export default function Footer() {
               <li className="flex items-start gap-2 md:gap-3">
                 <LocationIcon className="w-2.5 h-3.5 mt-0.5 md:mt-1 shrink-0" style={{ color: '#ff3333' }} />
                 <span className="text-xs md:text-sm text-[#374151]">
-                  International City, Dubai, UAE
+                Dubai, UAE. Gurgaon, India. Jaipur, India 
                 </span>
               </li>
               <li className="flex items-center gap-2 md:gap-3">
                 <PhoneFooterIcon className="w-3.5 h-3.5 shrink-0" style={{ color: '#ff3333' }} />
                 <a href="tel:+971585912084" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
-                  +971 58 591 2084
+                UAE +971 585912084
+               
+                </a>
+              </li>
+              <li className="flex items-center gap-2 md:gap-3">
+                <PhoneFooterIcon className="w-3.5 h-3.5 shrink-0" style={{ color: '#ff3333' }} />
+                <a href="tel:+918967392671" className="text-xs md:text-sm text-[#374151] hover:text-[#ff3333] transition-colors">
+                India +91 8967392671
+               
                 </a>
               </li>
               <li className="flex items-center gap-2 md:gap-3">

@@ -10,8 +10,8 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 const features = [
   {
     icon: ChipIcon,
-    title: 'AI Research',
-    description: 'We deliver AI-powered research insights that help organizations make smarter decisions faster with accurate, real-time data and predictive analysis.',
+    title: 'AI x Research Training',
+    description: 'We run AI × Research bootcamps for market researchers, research institutions, and policy teams, covering methodologies, data collection, and GenAI-enabled research workflows.',
   },
   {
     icon: SearchIcon,

@@ -34,7 +34,7 @@ export default function GuidanceSection() {
         >
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center md:text-left flex-1">
-            You Always Get the Best Guidance
+            Scale your strategic decisions with TSR Lab
           </h2>
 
           {/* Button */}

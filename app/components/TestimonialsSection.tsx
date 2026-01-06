@@ -7,21 +7,21 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const testimonials = [
   {
-    quote: '"TSRLab completely transformed our IT infrastructure. Their team was professional, responsive, and incredibly knowledgeable. Highly recommended!"',
+    quote: '"TSR Lab kickstarted our stakeholder engagement strategy at a critical stage of the project. Their research and  insights directly informed our strategic direction and strengthened our decision-making at senior levels"',
     name: 'Sarah Johnson',
-    role: 'CEO, TechStart Inc.',
+    role: 'Policy Leader, Sustainability Organization',
     image: '/images/client-1.jpg',
   },
   {
-    quote: '"Outstanding service and support. TSRLab helped us migrate to the cloud seamlessly. Our productivity has increased significantly since partnering with them."',
+    quote: '"TSR Lab supported us with deep market insights and structured user research that went well beyond surface-level validation. Their work helped us refine the problem statement, prioritize features, and translate an early-stage idea into a robust, scalable software concept ready for execution."',
     name: 'Michael Chen',
-    role: 'CTO, CloudBase Solutions',
+    role: 'Founder, Digital Product Venture',
     image: '/images/client-2.jpg',
   },
   {
-    quote: '"The custom software they developed for us has been a game-changer. TSRLab truly understands business needs and delivers exceptional results."',
+    quote: '"TSR Lab designed and executed our market surveys with strong methodological rigor and added a valuable analytical layer to our market entry assessment.Highly recommended."',
     name: 'Emily Rodriguez',
-    role: 'Director, FinTech Innovations',
+    role: 'Strategy Lead, Quick Commerce Venture',
     image: '/images/client-3.jpg',
   },
 ];

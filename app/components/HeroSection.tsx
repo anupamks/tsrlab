@@ -9,9 +9,9 @@ const slides = [
   {
     badge: 'TSR Lab',
     title: 'Reliable. Valid.',
-    highlight: 'AI Speed',
+    highlight: 'AI Speed Research',
     titleEnd: '',
-    description: 'Research That Keeps Your Organization Ahead',
+    description: 'Insight That Keeps Your Organization Ahead',
     image: '/images/2151003701.jpg',
     imageAlt: 'Red circuit board with binary code and glowing connections',
   },

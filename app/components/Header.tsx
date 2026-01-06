@@ -46,7 +46,11 @@ export default function Header() {
               </a>
               <a href="tel:+971585912084" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
                 <PhoneIcon className="w-3 h-3" style={{ color: '#ff3333' }} />
-                <span>+971 58 591 2084</span>
+                <span>UAE: +971 58 591 2084</span>
+              </a>
+              <a href="tel:+918967392671" className="flex items-center gap-2 text-xs font-medium text-[#374151] hover:text-[#ff3333] transition-colors">
+                <PhoneIcon className="w-3 h-3" style={{ color: '#ff3333' }} />
+                <span> India +91 8967392671</span>
               </a>
             </div>
             <div className="flex items-center gap-3">
@@ -87,16 +91,6 @@ export default function Header() {
               }`}
             >
               HOME
-            </a>
-            <a 
-              href="/about" 
-              className={`text-sm font-medium transition-colors ${
-                pathname === '/about' 
-                  ? 'text-[#ff3333]' 
-                  : 'text-[#4b5563] hover:text-[#ff3333]'
-              }`}
-            >
-              ABOUT
             </a>
             <a 
               href="/research-services" 
@@ -189,16 +183,6 @@ export default function Header() {
             }`}
           >
             HOME
-          </a>
-          <a
-            href="/about"
-            className={`py-3 text-base font-medium transition-colors border-b border-gray-100 ${
-              pathname === '/about' 
-                ? 'text-[#ff3333]' 
-                : 'text-[#4b5563] hover:text-[#ff3333]'
-            }`}
-          >
-            ABOUT
           </a>
           <a
             href="/research-services"

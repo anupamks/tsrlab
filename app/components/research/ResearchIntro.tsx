@@ -12,17 +12,12 @@ export default function ResearchIntro() {
           {/* Left Content */}
           <div className="space-y-8">
             <h1 className="text-5xl font-bold text-gray-900 leading-tight">
-              Expert Research Services
-              <br />
-              for Informed Decisions
+              Intelligence Meets Clarity at TSR Lab
             </h1>
 
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-gray-600">
-                At Consolution, we provide comprehensive research services that empower
-                businesses to make data-driven decisions. Our expert team combines
-                advanced methodologies with industry expertise to deliver actionable
-                insights.
+                At TSR Lab, impactful decisions begin with reliable, valid data. We combine scientific research methods, rigorous analysis, trusted data sources, and expert oversight to help organizations plan, validate, and communicate high-stakes decisions.
               </p>
              
             </div>
@@ -59,25 +54,25 @@ export default function ResearchIntro() {
                 <div className="flex items-center gap-4">
                   <CheckCircleIcon className="w-3 h-2 flex-shrink-0" style={{ color: '#16a34a' }} />
                   <p className="text-base font-medium text-gray-700">
-                    Expert team with years of research experience
+                    Expert team with proven Delivery Experience Across 100+ Engagements
                   </p>
                 </div>
                 <div className="flex items-center gap-4">
                   <CheckCircleIcon className="w-3 h-2 flex-shrink-0" style={{ color: '#16a34a' }} />
                   <p className="text-base font-medium text-gray-700">
-                    Advanced analytical tools and methodologies
+                    AI-Native, Market-Tested Research Workflows
                   </p>
                 </div>
                 <div className="flex items-center gap-4">
                   <CheckCircleIcon className="w-3 h-2 flex-shrink-0" style={{ color: '#16a34a' }} />
                   <p className="text-base font-medium text-gray-700">
-                    Customized solutions for your unique needs
+                    A bottom-up approach to insights co-creation
                   </p>
                 </div>
                 <div className="flex items-center gap-4">
                   <CheckCircleIcon className="w-3 h-2 flex-shrink-0" style={{ color: '#16a34a' }} />
                   <p className="text-base font-medium text-gray-700">
-                    Timely delivery with actionable insights
+                    Led by PhDs and Sector Experts
                   </p>
                 </div>
               </div>
@@ -88,14 +83,10 @@ export default function ResearchIntro() {
         </div>
 <div className="grid lg:grid-cols-1 pt-18 space-y-4 items-start">
           <p className="text-lg leading-relaxed text-gray-600">
-                Whether you need market research, competitive analysis, or custom research
-                solutions, we have the tools and expertise to help you stay ahead of the
-                competition and identify new opportunities for growth.
+                For SMEs, startups, and market-leading brands, we deliver contextual, data-driven research that sharpens understanding of markets, competitors, and innovation landscapes.
               </p>
               <p className="text-lg leading-relaxed text-gray-600">
-                Our research services are designed to provide you with the clarity and
-                confidence needed to navigate complex business challenges and capitalize
-                on emerging trends.
+                For policy institutions and social research organizations, we act as a trusted research partner, accelerating studies through robust methodologies, advanced analytics, and disciplined execution.
               </p>
       </div>
       </div>

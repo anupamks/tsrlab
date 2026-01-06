@@ -9,26 +9,26 @@ export default function ResearchProcessSection() {
     {
       number: '01',
       icon: LightbulbIcon,
-      title: 'Discovery & Planning',
-      description: 'We begin by understanding your research objectives, defining scope, and developing a comprehensive research plan.',
+      title: 'We collectively define the agenda',
+      description: 'We begin with a focused discovery discussion to clearly understand your decision context, objectives, constraints, and success criteria—ensuring the research is framed around real decision needs, not generic questions.',
     },
     {
       number: '02',
       icon: DatabaseIcon,
-      title: 'Data Collection',
-      description: 'Our team employs multiple methodologies including surveys, interviews, focus groups, and data mining.',
+      title: 'We conduct due diligence and design the approach',
+      description: 'We perform a rapid yet rigorous due diligence and develop a tailored research proposal, outlining methodology, scope, timelines, and deliverables aligned with your decision requirements.',
     },
     {
       number: '03',
       icon: ChartLineIcon,
-      title: 'Analysis & Insights',
-      description: 'Advanced analytical techniques transform collected data into meaningful insights and actionable recommendations.',
+      title: 'We kickstart the work with continuous alignment',
+      description: 'Once approved, we initiate execution and share interim findings, progress updates, and early insights—maintaining close alignment and flexibility throughout the engagement.',
     },
     {
       number: '04',
       icon: DocumentIcon,
-      title: 'Reporting & Delivery',
-      description: 'Comprehensive reports and visualizations ensure insights are communicated clearly and recommendations delivered on time.',
+      title: 'We deliver decision-ready outputs',
+      description: 'We conclude with clear, structured, and actionable deliverables designed to directly support confident decision-making.',
     },
   ];
 
@@ -41,11 +41,10 @@ export default function ResearchProcessSection() {
             How We Work
           </p>
           <h2 className="text-4xl font-bold text-gray-900">
-            Our Research Process
+            We can be your research and advisory partner
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            A systematic approach to delivering high-quality research that meets your objectives and
-            exceeds your expectations.
+            Learn how our 4 step approach streamlines efficient delivery
           </p>
         </div>
 

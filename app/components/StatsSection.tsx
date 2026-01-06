@@ -4,11 +4,11 @@ import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const stats = [
-  { value: '705+', label: 'Projects Completed' },
-  { value: '809+', label: 'Satisfied Customers' },
-  { value: '335', label: 'Awards Received' },
-  { value: '35', label: 'Years Experience' },
-];
+  { value: 'PhD-Led', label: 'Research & analytics expertise' },
+  { value: 'IIT / IIM', label: 'Founders & Advisors' },
+  { value: '10 +', label: 'AI-Native Research Products Under-development' },
+  { value: 'Multi-Market', label: 'India • Middle East • Global' }
+]; 
 
 export default function StatsSection() {
   const { ref, isVisible } = useScrollAnimation();
@@ -25,8 +25,8 @@ export default function StatsSection() {
               } ${index > 1 ? 'lg:border-l' : ''} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#ff3333]">{stat.value}</h3>
-              <p className="text-[10px] md:text-xs font-bold tracking-widest text-[#6b7280] uppercase text-center px-2">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#ff3333]">{stat.value}</h3>
+              <p className="text-[8px] md:text-[9px] font-bold tracking-widest text-[#6b7280] uppercase text-center px-2">
                 {stat.label}
               </p>
             </div>

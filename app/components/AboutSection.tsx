@@ -26,7 +26,7 @@ export default function AboutSection() {
           {/* Right Content */}
           <div className={`flex-1 space-y-8 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1e2345]">
-              Join our upcoming AIxResearch Workshop
+              Join our upcoming  AI x Research Workshop
             </h2>
 
             <p className="text-sm md:text-base lg:text-lg text-[#4b5563] leading-relaxed">
